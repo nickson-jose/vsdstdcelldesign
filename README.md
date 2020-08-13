@@ -21,23 +21,23 @@ The flow-chart below gives a better picture of openlane flow as a whole (**Image
 Place and Route (PnR) is the core of any physical design flow and OpenLANE integrates into it several key open source tools which perform each of the respective stages of PnR.
 Below are the stages and the respective tools (in ()) that are called by openlane for the functionalities as described:
 - Synthesis
-  - Generating gate-level netlist (yosys).
-  - Performing cell mapping (abc).
-  - Performing pre-layout STA (OpenSTA).
+  - Generating gate-level netlist ([yosys](https://github.com/YosysHQ/yosys)).
+  - Performing cell mapping ([abc](https://github.com/YosysHQ/yosys)).
+  - Performing pre-layout STA ([OpenSTA](https://github.com/The-OpenROAD-Project/OpenSTA)).
 - Floorplanning
-  - Defining the core area for the macro as well as the cell sites and the tracks (init_fp).
-  - Placing the macro input and output ports (ioplacer).
-  - Generating the power distribution network (pdn).
+  - Defining the core area for the macro as well as the cell sites and the tracks ([init_fp](https://github.com/The-OpenROAD-Project/OpenROAD/tree/master/src/init_fp)).
+  - Placing the macro input and output ports ([ioplacer](https://github.com/The-OpenROAD-Project/ioPlacer/)).
+  - Generating the power distribution network ([pdn](https://github.com/The-OpenROAD-Project/pdn/)).
 - Placement
-  - Performing global placement (RePLace).
-  - Perfroming detailed placement to legalize the globally placed components (OpenDP).
+  - Performing global placement ([RePLace](https://github.com/The-OpenROAD-Project/RePlAce)).
+  - Perfroming detailed placement to legalize the globally placed components ([OpenDP](https://github.com/The-OpenROAD-Project/OpenDP)).
 - Clock Tree Synthesis (CTS)
-  - Synthesizing the clock tree (TritonCTS).
+  - Synthesizing the clock tree ([TritonCTS](https://github.com/The-OpenROAD-Project/OpenROAD/tree/master/src/TritonCTS)).
 - Routing
-  - Performing global routing to generate a guide file for the detailed router (FastRoute).
-  - Performing detailed routing (TritonRoute)
+  - Performing global routing to generate a guide file for the detailed router ([FastRoute](https://github.com/The-OpenROAD-Project/FastRoute/tree/openroad)).
+  - Performing detailed routing ([TritonRoute](https://github.com/The-OpenROAD-Project/TritonRoute))
 - GDSII Generation
-  - Streaming out the final GDSII layout file from the routed def (Magic).
+  - Streaming out the final GDSII layout file from the routed def ([Magic](https://github.com/RTimothyEdwards/magic)).
   
 # How to build and invoke openlane?
 

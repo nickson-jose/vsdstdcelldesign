@@ -5,7 +5,7 @@ This repository contains all the information needed to run RTL to GDSII using op
 - [Overview of openlane flow.](#overview-of-openlane-flow)
 - [Introduction to basic Physical Design flow.](#introduction-to-basic-physical-design-flow)
 - [How to build and invoke openlane?](#how-to-build-and-invoke-openlane?)
-- [Introduction to LEF file.](#introduction-to-lef-file)
+- [Introduction to LEF.](#introduction-to-lef)
   - [Create port definition and set attributes port class and port use for a layout.](#create-port-definition-and-set-attributes-port-class-and-port-use-for-a-layout)
   - [Define LEF properties.](#define-lef-properties)
   - [Extract a standard format LEF file for a sample layout.](#extract-a-standard-format-lef-file-for-a-sample-layout)
@@ -42,4 +42,10 @@ Below are the stages and the respective tools (in ()) that are called by openlan
 
 Detailed description on how to build and invoke openlane is given in this [link](https://github.com/njose939/openlane_build_script).
 
- 
+#  Introduction to LEF
+LEF (Library Exchange Format) is of two types:
+- Cell LEF - It's an abstract view of the cell and only gives information about PR boundary, pin position and metal layer information of the cell.
+- Technology LEF - It contains information about available metal layer, via information, DRCs of particular technology used by placer and router etc..
+The below diagram highlights the difference between a layout and a LEF:
+
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/layout_vs_LEF.jpg?raw=true)

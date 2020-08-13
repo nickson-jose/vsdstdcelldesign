@@ -48,4 +48,4 @@ LEF (Library Exchange Format) is of two types:
 - Technology LEF - It contains information about available metal layer, via information, DRCs of particular technology used by placer and router etc..
 The below diagram highlights the difference between a layout and a LEF:
 
-![alt text](https://github.com/njose939/OpenLane/blob/master/Images/layout_vs_LEF.jpg?raw=true)
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/layout_vs_LEF.JPG?raw=true)

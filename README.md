@@ -52,7 +52,18 @@ The below diagram highlights the difference between a layout and a LEF:
 
 ## Create port definition and set attributes port class and port use for a layout
 
-Our objective is to extract LEF from a given layout (here of a simple CMOS inverter) in standard format. Defining port and setting correct class and use attributes to each port is the first step. 
+For LEF files, a cell that contains ports is written as a macro cell, and the ports are the declared PINs of the macro. Our objective is to extract LEF from a given layout (here of a simple CMOS inverter) in standard format. Defining port and setting correct class and use attributes to each port is the first step. 
 The easiest way to define a port is through Magic Layout window and following are the steps:
 - In Magic Layout window, first source the .mag file for the design (here inverter). Then **Edit >> Text** which opens up a dialogue box.
 
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/portA.JPG?raw=true)
+
+- For each layer (to be turned into port), make a box on that particular layer and input a label name along with a sticky label of the layer name with which the port needs to be associated. Ensure the Port enable checkbox is checked and default checkbox is unchecked as shown in the figure:
+
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/portY.JPG?raw=true)
+
+In the above two figures, port A (input port) and port Y (output port) are taken from locali (local interconnect) layer. Also, the number in the textarea near enable checkbox defines the order in which the ports will be written in LEF file (0 being the first).
+
+- For power and ground layers, the definition could be same or different than the signal layer. Here, ground and power connectivity are taken from metal1 (Notice the sticky label)
+
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/portVPWR.JPG?raw=true)

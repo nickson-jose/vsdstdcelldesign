@@ -49,3 +49,10 @@ LEF (Library Exchange Format) is of two types:
 The below diagram highlights the difference between a layout and a LEF:
 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/layout_vs_LEF.JPG?raw=true)
+
+## Create port definition and set attributes port class and port use for a layout
+
+Our objective is to extract LEF from a given layout (here of a simple CMOS inverter) in standard format. Defining port and setting correct class and use attributes to each port is the first step. 
+The easiest way to define a port is through Magic Layout window and following are the steps:
+- In Magic Layout window, first source the .mag file for the design (here inverter). Then **Edit >> Text** which opens up a dialogue box.
+

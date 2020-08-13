@@ -3,12 +3,13 @@ This repository contains all the information needed to run RTL to GDSII using op
 
 # Table of Contents
 - [Overview of openlane flow.](#overview-of-openlane-flow)
-- [Introduction to basic Physical Design flow.](#introduction-to-basic-physical-design-flow)
+- [Introduction to Physical Design flow.](#introduction-to-physical-design-flow)
 - [How to build and invoke openlane?](#how-to-build-and-invoke-openlane?)
 - [Introduction to LEF.](#introduction-to-lef)
   - [Create port definition and set attributes port class and port use for a layout.](#create-port-definition-and-set-attributes-port-class-and-port-use-for-a-layout)
   - [Define LEF properties.](#define-lef-properties)
   - [Extract a standard format LEF file for a sample layout.](#extract-a-standard-format-lef-file-for-a-sample-layout)
+- [Limitations.](#limitations)
   
  # Overview of openlane flow
 OpenLANE is a completely automated RTL to GDSII flow which has imbided in it many opensource components, viz., OpenROAD, Yosys, ABC, Magic etc and custom methodology scripts for design exploration and optimization. Openlane is built around Skywater 130nm process node and is capable of performing full ASIC implementation steps from RTL all the way down to GDSII. 
@@ -16,7 +17,7 @@ The flow-chart below gives a better picture of openlane flow as a whole (**Image
 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/openlane.flow.1.png?raw=true)
   
-# Introduction to basic Physical Design flow
+# Introduction to Physical Design flow
 Place and Route (PnR) is the core of any physical design flow and OpenLANE integrates into it several key open source tools which perform each of the respective stages of PnR.
 Below are the stages and the respective tools (in ()) that are called by openlane for the functionalities as described:
 - Synthesis
@@ -80,3 +81,11 @@ Certain properties needs to be set before writing the LEF. These values are fetc
 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/final_LEF_write.JPG?raw=true) 
 
+# Limitations
+
+At present, OpenLANE has following limitations:
+- Limited Timing Constraints.
+- Timing Closure.
+  - No post-routing optimizations.
+
+Neverthless, OpenLANE has a huge community support and improvements are getting pushed every other day. For more details on openLANE do visit [openlane1](https://github.com/efabless/openlane/) [openlane2](https://www.youtube.com/watch?v=Vhyv0eq_mLU).

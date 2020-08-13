@@ -70,4 +70,13 @@ In the above two figures, port A (input port) and port Y (output port) are taken
 | --------------------------------------------------------------------------------------------| ------------- |
 | ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/portVPWR.JPG?raw=true)  | ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/portVPWR.JPG?raw=true) |
 
+Post port definition, the next step is setting **port class** and **port use** attributes. These attributes define the direction as well as usage of each port and are set in tkcon window as:
+
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/port_class_use.JPG?raw=true) 
+
+## Define LEF properties
+
+Certain properties needs to be set before writing the LEF. These values are fetched by placer and router to determine, for instance, site where a cell needs to be placed. Macro cell properties common to the LEF/DEF definition but that have no corresponding database interpretation in magic are retained using the cell **property** method in magic. There are specific property names associated with the LEF format. Once the properties are set, `lef write` command writes the LEF file with the same nomenclature as that of the layout (.mag) file.
+
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/port_class_use.JPG?raw=true) 
 

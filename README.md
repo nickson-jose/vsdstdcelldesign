@@ -66,4 +66,8 @@ In the above two figures, port A (input port) and port Y (output port) are taken
 
 - For power and ground layers, the definition could be same or different than the signal layer. Here, ground and power connectivity are taken from metal1 (Notice the sticky label)
 
-![alt text](https://github.com/njose939/OpenLane/blob/master/Images/portVPWR.JPG?raw=true)
+| VPWR                                                                                        |   VGND        |
+| --------------------------------------------------------------------------------------------| ------------- |
+| ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/portVPWR.JPG?raw=true)  | ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/portVPWR.JPG?raw=true) |
+
+

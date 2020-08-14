@@ -11,15 +11,15 @@ This repository contains all the information needed to run RTL to GDSII using op
   - [Extract a standard format LEF file for a sample layout.](#extract-a-standard-format-lef-file-for-a-sample-layout)
 - [Limitations.](#limitations)
   
- # Overview of openlane flow
+ # Intrduction openlane flow
 OpenLANE is a completely automated RTL to GDSII flow which has imbided in it many opensource components, viz., OpenROAD, Yosys, ABC, Magic etc and custom methodology scripts for design exploration and optimization. Openlane is built around Skywater 130nm process node and is capable of performing full ASIC implementation steps from RTL all the way down to GDSII. 
-The flow-chart below gives a better picture of openlane flow as a whole (**Image Source:** [efabless/openlane](https://github.com/efabless/openlane/blob/master/doc/openlane.flow.1.png))
+The flow-chart below gives a better picture of openlane flow as a whole (**Image Courtesy:** [efabless/openlane](https://github.com/efabless/openlane/blob/master/doc/openlane.flow.1.png))
 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/openlane.flow.1.png?raw=true)
   
-# Introduction to Physical Design flow
-Place and Route (PnR) is the core of any physical design flow and OpenLANE integrates into it several key open source tools which perform each of the respective stages of PnR.
-Below are the stages and the respective tools (in ()) that are called by openlane for the functionalities as described:
+# Overview of Physical Design flow
+Place and Route (PnR) is the core of any ASIC implementation and OpenLANE integrates into it several key open source tools which perform each of the respective stages of PnR.
+Below are the stages and the respective tools (in ( )) that are called by openlane for the functionalities as described:
 - Synthesis
   - Generating gate-level netlist ([yosys](https://github.com/YosysHQ/yosys)).
   - Performing cell mapping ([abc](https://github.com/YosysHQ/yosys)).

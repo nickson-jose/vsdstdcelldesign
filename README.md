@@ -1,5 +1,5 @@
 # OpenLane
-This repository contains all the information needed to run RTL to GDSII using openlane flow. In addition to that, it also contain procedures on how to create a custom LEF file and plugging it into an openlane flow.
+This repository contains all the information needed to run RTL to GDSII using openlane flow. In addition to that, it also contains procedures on how to create a custom LEF file and plugging it into an openlane flow.
 
 # Table of Contents
 - [Overview of openlane flow.](#overview-of-openlane-flow)

@@ -4,11 +4,11 @@ This repository contains all the information needed to run RTL to GDSII using op
 # Table of Contents
 - [Overview of openlane flow.](#overview-of-openlane-flow)
 - [Introduction to Physical Design flow.](#introduction-to-physical-design-flow)
-- [How to build and invoke openlane?](#how-to-build-and-invoke-openlane?)
+- [How to build and invoke openlane.](#how-to-build-and-invoke-openlane?)
 - [Introduction to LEF.](#introduction-to-lef)
-  - [Create port definition and set attributes port class and port use for a layout.](#create-port-definition-and-set-attributes-port-class-and-port-use-for-a-layout)
-  - [Define LEF properties.](#define-lef-properties)
-  - [Extract a standard format LEF file for a sample layout.](#extract-a-standard-format-lef-file-for-a-sample-layout)
+  - [Create port definition.](#create-port-definition)
+  - [Set `port class` and `port use` attributes for a layout.](#set-port-class-and-port-use-attributes-for-a-layout)
+  - [Defining LEF properties and extracting LEF file.](#defining-lef-properties-and-extracting-lef-file)
 - [Limitations.](#limitations)
   
  # Intrduction openlane flow
@@ -39,7 +39,7 @@ Below are the stages and the respective tools (in ( )) that are called by openla
 - GDSII Generation
   - Streaming out the final GDSII layout file from the routed def ([Magic](https://github.com/RTimothyEdwards/magic)).
   
-# How to build and invoke openlane?
+# How to build and invoke openlane
 
 Detailed description on how to build and invoke openlane is given in this [link](https://github.com/njose939/openlane_build_script).
 
@@ -51,7 +51,7 @@ The below diagram highlights the difference between a layout and a LEF:
 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/layout_vs_LEF.JPG?raw=true)
 
-## Create port definition and set attributes port class and port use for a layout
+## Create port definition
 
 For LEF files, a cell that contains ports is written as a macro cell, and the ports are the declared PINs of the macro. Our objective is to extract LEF from a given layout (here of a simple CMOS inverter) in standard format. Defining port and setting correct class and use attributes to each port is the first step. 
 The easiest way to define a port is through Magic Layout window and following are the steps:
@@ -71,6 +71,8 @@ In the above two figures, port A (input port) and port Y (output port) are taken
 | --------------------------------------------------------------------------------------------| ------------- |
 | ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/portVPWR.JPG?raw=true)  | ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/portVGND.JPG?raw=true) |
 
+## Set port class and port use attributes for a layout
+
 Post port definition, the next step is setting **port class** and **port use** attributes. These attributes define the direction as well as usage of each port and are set in tkcon window (after selecting each port on layout window. A keyboard shortcut would be repeatedly pressing `s` till that port gets highlighed) as:
 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/port_class_use.JPG?raw=true) 
@@ -80,7 +82,7 @@ You can delete or remove any port by first selecting the port (key `s`) and then
 * `port remove`
 * `label erase`
 
-## Define LEF properties
+## Defining LEF properties and extracting LEF file
 
 Certain properties needs to be set before writing the LEF. These values are fetched by placer and router to determine, for instance, site where a cell needs to be placed. Macro cell properties common to the LEF/DEF definition but that have no corresponding database interpretation in magic are retained using the cell **property** method in magic. There are specific property names associated with the LEF format. Once the properties are set, `lef write` command writes the LEF file with the same nomenclature as that of the layout (.mag) file.
 

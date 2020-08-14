@@ -75,6 +75,11 @@ Post port definition, the next step is setting **port class** and **port use** a
 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/port_class_use.JPG?raw=true) 
 
+#### Additional:
+You can delete or remove any port by first selecting the port (key `s`) and then executing below two commands in order (in tkcon window):
+* `port remove`
+* `label erase`
+
 ## Define LEF properties
 
 Certain properties needs to be set before writing the LEF. These values are fetched by placer and router to determine, for instance, site where a cell needs to be placed. Macro cell properties common to the LEF/DEF definition but that have no corresponding database interpretation in magic are retained using the cell **property** method in magic. There are specific property names associated with the LEF format. Once the properties are set, `lef write` command writes the LEF file with the same nomenclature as that of the layout (.mag) file.

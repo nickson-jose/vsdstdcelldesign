@@ -71,7 +71,7 @@ In the above two figures, port A (input port) and port Y (output port) are taken
 | --------------------------------------------------------------------------------------------| ------------- |
 | ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/portVPWR.JPG?raw=true)  | ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/portVGND.JPG?raw=true) |
 
-Post port definition, the next step is setting **port class** and **port use** attributes. These attributes define the direction as well as usage of each port and are set in tkcon window (after selecting each port on layout window. a keyboard shortcut would be repeatedly pressing `s` till that port gets highlighed) as:
+Post port definition, the next step is setting **port class** and **port use** attributes. These attributes define the direction as well as usage of each port and are set in tkcon window (after selecting each port on layout window. A keyboard shortcut would be repeatedly pressing `s` till that port gets highlighed) as:
 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/port_class_use.JPG?raw=true) 
 

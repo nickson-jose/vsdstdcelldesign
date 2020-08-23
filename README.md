@@ -4,14 +4,14 @@ This repository contains all the information needed to build and run openlane fl
 # Table of Contents
 - [Overview of openlane flow.](#overview-of-openlane-flow)
 - [Introduction to Physical Design flow.](#introduction-to-physical-design-flow)
-- [How to build and invoke openlane.](#how-to-build-and-invoke-openlane?)
+- [Build and invoke openlane.](#build-and-invoke-openlane)
 - [Introduction to LEF.](#introduction-to-lef)
   - [Create port definition.](#create-port-definition)
   - [Set `port class` and `port use` attributes for a layout.](#set-port-class-and-port-use-attributes-for-a-layout)
   - [Defining LEF properties and extracting LEF file.](#defining-lef-properties-and-extracting-lef-file)
 - [Limitations.](#limitations)
   
- # Introduction openlane flow
+ # Introduction to openlane flow
 OpenLANE is a completely automated RTL to GDSII flow which has imbided in it many opensource components, viz., OpenROAD, Yosys, ABC, Magic etc and custom methodology scripts for design exploration and optimization. Openlane is built around Skywater 130nm process node and is capable of performing full ASIC implementation steps from RTL all the way down to GDSII. 
 The flow-chart below gives a better picture of openlane flow as a whole (**Image Courtesy:** [efabless/openlane](https://github.com/efabless/openlane/blob/master/doc/openlane.flow.1.png))
 
@@ -39,7 +39,7 @@ Below are the stages and the respective tools (in ( )) that are called by openla
 - GDSII Generation
   - Streaming out the final GDSII layout file from the routed def ([Magic](https://github.com/RTimothyEdwards/magic)).
   
-# How to build and invoke openlane
+# Build and Invoke openlane
 
 Detailed description on how to build and invoke openlane is given in this [link](https://github.com/njose939/openlane_build_script).
 

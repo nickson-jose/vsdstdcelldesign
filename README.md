@@ -151,6 +151,9 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
      The above settings ensure that the flow takes only sky130_fd_sc_hd__inv_1 as the cell to drive the input ports and inserts filler cells in empty spaces.
 
 - Run the interactive flow as described [here.](https://github.com/efabless/openlane#interactive-mode)
+  
+   **Note:**
+     The sample inverter magic file (_sky130_inv.mag_) has been included as a reference resource.
 
 ## Observations
 

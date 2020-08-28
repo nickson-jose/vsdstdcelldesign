@@ -12,7 +12,7 @@ This repository contains all the information needed to build and run openlane fl
   - [Create port definition.](#create-port-definition)
   - [Set `port class` and `port use` attributes for a layout.](#set-port-class-and-port-use-attributes-for-a-layout)
   - [Defining LEF properties and extracting LEF file.](#defining-lef-properties-and-extracting-lef-file)
-  - [Plugging in the custom cell definition in openlane flow](plugging-in-the-custom-cell-definition-in-openlane-flow)
+  - [Plugging in the custom cell definition in openlane flow.](plugging-in-the-custom-cell-definition-in-openlane-flow)
   - [Challenges](#challenges)
 - [Limitations.](#limitations)
   
@@ -124,18 +124,20 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
    - Modify the LEF file definition for sky130_fd_sc_hd__inv_1 with the one extracted in [Step-5](#defining-lef-properties-and-extracting-lef-file) in `sky130_fd_sc_hd.lef` file (`~/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef`)
 
 - Include following configuration settings (specific to picorv32a design) in the `config.tcl` file present in `~/openlane_working_dir/openlane/designs/picorv32a/`:-
-```bash
-set ::env(CLOCK_PORT) "clk"
-set ::env(SYNTH_DRIVING_CELL) sky130_fd_sc_hd__inv_1
-set ::env(SYNTH_CAP_LOAD) 2.3
-set ::env(SYNTH_MAX_FANOUT) 3
-set ::env(FILL_INSERTION) 1
-set ::env(DIODE_INSERTION_STRATEGY) 0
-set ::env(ROUTING_STRATEGY) 14
-```
+     ```bash
+     set ::env(CLOCK_PORT) "clk"
+     set ::env(SYNTH_DRIVING_CELL) sky130_fd_sc_hd__inv_1
+     set ::env(SYNTH_CAP_LOAD) 2.3
+     set ::env(SYNTH_MAX_FANOUT) 3
+     set ::env(FILL_INSERTION) 1
+     set ::env(DIODE_INSERTION_STRATEGY) 0
+     set ::env(ROUTING_STRATEGY) 14 
+     ```
+   
    **Note:**
-    The following settings ensure that the flow takes only sky130_fd_sc_hd__inv_1 as the cell to drive the input ports and inserts fillers wherever it finds empty spaces.
+     The following settings ensure that the flow takes only sky130_fd_sc_hd__inv_1 as the cell to drive the input ports and inserts fillers wherever it finds empty spaces.
 
+- Run the interactive flow as described [here](https://github.com/efabless/openlane#interactive-mode).
 # Limitations
 
 At present, OpenLANE has following limitations:

@@ -145,7 +145,11 @@ The custom inverter was successfully included in the picorv32a design. Below is 
 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/final_routing.JPG?raw=true) 
 
+## Challenges
 
+The biggest challenge was with the legalization of the cell. Initial iteration showed illegal positioning of the cell away from the standard cell rails.
+
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/legalization_issue.JPG?raw=true) 
 
 # Limitations
 

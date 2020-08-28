@@ -1,4 +1,4 @@
-# OpenLane
+# Standard cell design and characterization using openlane flow
 This repository contains all the information needed to build and run openlane flow, which has the capability to perform full ASIC implementation steps from RTL to GDSII. In addition, it also contains procedures on how to create a custom LEF file and plugging it into an openlane flow.
 
 # Table of Contents
@@ -8,6 +8,7 @@ This repository contains all the information needed to build and run openlane fl
 - [Introduction to LEF.](#introduction-to-lef)
 - [Standard cell design and characterization of CMOS inverter in openlane.](#standard-cell-design-and-characterization-of-CMOS-inverter-in-openlane)
   - [Objective.](#objective)
+  - [About PicoRV32.](#about-picorv32)
   - [Standard cell layout design in Magic.](#standard-cell-layout-design-in-magic)
   - [Create port definition.](#create-port-definition)
   - [Set `port class` and `port use` attributes for a layout.](#set-port-class-and-port-use-attributes-for-a-layout)
@@ -62,6 +63,10 @@ The below diagram highlights the difference between a layout and a LEF:
 ## Objective
 
 The goal of the project is to design a single height standard cell and plug this custom cell into a more complex design and perform it's PnR in the openlane flow. The standard cell chosen is a basic CMOS inverter and the design into which it's plugged into is a pre-built [picorv32a](https://github.com/efabless/openlane/tree/master/designs/picorv32a) core. 
+
+## About PicoRV32
+
+PicoRV32 is a CPU core that implements the RISC-V RV32IMC Instruction Set. It can be configured as RV32E, RV32I, RV32IC, RV32IM, or RV32IMC core, and optionally contains a built-in interrupt controller. Tools (gcc, binutils, etc..) can be obtained via the RISC-V Website. The examples bundled with PicoRV32 expect various RV32 toolchains to be installed in /opt/riscv32i[m][c]. See the build instructions below for details. PicoRV32 is free and open hardware licensed under the ISC license (a license that is similar in terms to the MIT license or the 2-clause BSD license)
 
 ## Standard cell layout design in Magic
 

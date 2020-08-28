@@ -8,7 +8,7 @@ This repository contains all the information needed to build and run openlane fl
 - [Introduction to LEF.](#introduction-to-lef)
 - Standard cell design and characterization with CMOS inverter in openlane.
   - Objective
-  - Standard cell layout design from scratch
+  - Standard cell layout design in Magic.
   - Challenges
   - [Create port definition.](#create-port-definition)
   - [Set `port class` and `port use` attributes for a layout.](#set-port-class-and-port-use-attributes-for-a-layout)
@@ -67,6 +67,7 @@ The goal of the project is to design a single height standard cell and plug this
 
 - The first step in magic layout tool is to create a bounding box with a width of 1.38 (3 x width(unithd)) and height of 2.72. This can be done by using command `property FIXED_BBOX {0 0 138 27200}` in magic tkcon window.
 
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/initial_bbox.JPG?raw=true)
 
 ## Create port definition
 

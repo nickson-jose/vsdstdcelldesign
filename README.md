@@ -113,13 +113,22 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
 
 ## Plugging custom LEF to openlane flow
 
--Ensure openlane picks the custom cell in the design.
- - Verify whether the required cell is excluded from no_synth.cells `(~/openlane_working_dir/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/)`.
+- Ensure openlane picks the custom cell in the design.
+  - Verify whether the required cell is excluded from no_synth.cells `(~/openlane_working_dir/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/)`.
  #### Note:
  In the below figure, sky130_fd_sc_hd__inv_1 isn't present in the no_synth.cells.
-
  ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/no_synth.JPG?raw=true) 
 
+- Include following configuration settings (specific to picorv32a design) in the `config.tcl` file present in `~/openlane_working_dir/openlane/designs/picorv32a/`:-
+```bash
+set ::env(CLOCK_PORT) "clk"
+set ::env(SYNTH_DRIVING_CELL) sky130_fd_sc_hd__inv_1
+set ::env(SYNTH_CAP_LOAD) 2.3
+set ::env(SYNTH_MAX_FANOUT) 3
+set ::env(FILL_INSERTION) 1
+set ::env(DIODE_INSERTION_STRATEGY) 0
+set ::env(ROUTING_STRATEGY) 14
+```
 # Limitations
 
 At present, OpenLANE has following limitations:

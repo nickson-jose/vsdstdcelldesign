@@ -68,9 +68,11 @@ The goal of the project is to design a single height standard cell and plug this
 ## About PicoRV32
 
 PicoRV32 is a CPU core that implements the RISC-V RV32IMC Instruction Set. It can be configured as RV32I, RV32IC, RV32IM, or RV32IMC core; where the suffixes stand for:
+
 - M - Multiply extension
 - I - Base Integer Instructions
 - C - Compressed Instructions
+
 PicoRV32 is free and open hardware licensed under the ISC license. All features and data-sheet related to picoRV32 core can be obtained [here.](https://www.efabless.com/design_catalog/ip_block/92)
 
 ## Standard cell layout design in Magic
@@ -167,6 +169,8 @@ The custom inverter successfully included in the picorv32a design. Below is the 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/dimensions.JPG?raw=true)
 
 # Future work
+
+The upcoming work of this project would be detailed IP characterization once all corner spice models is made availabe in Google-skywater [public forum.](https://github.com/google/skywater-pdk)
 
 # Limitations
 

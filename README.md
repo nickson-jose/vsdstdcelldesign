@@ -158,9 +158,13 @@ The custom inverter successfully included in the picorv32a design. Below is the 
 
 # Limitations
 
-At present, OpenLANE has following limitations:
+At present, Openlane has following limitations:
 - Limited Timing Constraints.
 - Timing Closure.
   - No post-routing optimizations.
 
-Neverthless, OpenLANE has a huge community support and improvements are getting pushed every other day. For more details on openLANE do visit [openlane1](https://github.com/efabless/openlane/) [openlane2](https://www.youtube.com/watch?v=Vhyv0eq_mLU).
+Neverthless, Openlane has a huge community support and improvements are getting pushed every other day. For more details on openLANE do visit [openlane1](https://github.com/efabless/openlane/) [openlane2](https://www.youtube.com/watch?v=Vhyv0eq_mLU).
+
+# Acknowledgement
+- [Kunal Ghosh](https://github.com/kunalg123)
+- [Ahmed Ghazy](https://github.com/ax3ghazy)

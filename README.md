@@ -166,5 +166,5 @@ At present, Openlane has following limitations:
 Neverthless, Openlane has a huge community support and improvements are getting pushed every other day. For more details on openLANE do visit [openlane1](https://github.com/efabless/openlane/) [openlane2](https://www.youtube.com/watch?v=Vhyv0eq_mLU).
 
 # Acknowledgement
-- [Kunal Ghosh](https://github.com/kunalg123)
-- [Ahmed Ghazy](https://github.com/ax3ghazy)
+- [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd
+- [Ahmed Ghazy](https://github.com/ax3ghazy), openlane team, efabless

@@ -13,6 +13,7 @@ This repository contains all the information needed to build and run openlane fl
   - [Set `port class` and `port use` attributes for a layout.](#set-port-class-and-port-use-attributes-for-a-layout)
   - [Defining LEF properties and extracting LEF file.](#defining-lef-properties-and-extracting-lef-file)
   - [Plugging custom LEF to openlane flow.](plugging-custom-lef-to-openlane-flow)
+  - [Observation](#observation)
   - [Challenges](#challenges)
 - [Limitations.](#limitations)
   
@@ -141,15 +142,19 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
 
 ## Observation
 
-The custom inverter was successfully included in the picorv32a design. Below is the final routed picorv32a design with the custom cell zoomed in and highlighted.
+The custom inverter successfully included in the picorv32a design. Below is the final routed picorv32a design with the custom cell zoomed in and highlighted.
 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/final_routing.JPG?raw=true) 
 
 ## Challenges
 
-The biggest challenge was with the legalization of the cell. Initial iteration showed illegal positioning of the cell away from the standard cell rails.
+- The biggest challenge was with the legalization of the cell. Initial iteration showed illegal positioning of the cell away from the standard cell rails.
 
-![alt text](https://github.com/njose939/OpenLane/blob/master/Images/legalization_issue.JPG?raw=true) 
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/legalization_issue.JPG?raw=true)
+
+- Upon closer inspection, the issue seemed to be with the dimensions of the drawn power and ground rails and also with the positioning of local1 -> metal1 contacts.
+
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/dimensions.JPG?raw=true)
 
 # Limitations
 

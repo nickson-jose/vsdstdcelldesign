@@ -16,7 +16,7 @@ This repository contains all the information needed to build and run openlane fl
   - [Plugging custom LEF to openlane flow.](plugging-custom-lef-to-openlane-flow)
   - [Observations.](#observations)
   - [Challenges.](#challenges)
-- [Future work](#future-work)
+- [Future work.](#future-work)
 - [Limitations.](#limitations)
 - [Acknowledgements.](#acknowledgements)
  # Introduction to Openlane flow

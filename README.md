@@ -6,6 +6,9 @@ This repository contains all the information needed to build and run openlane fl
 - [Overview of Physical Design flow.](#overview-of-physical-design-flow)
 - [Build and invoke openlane.](#build-and-invoke-openlane)
 - [Introduction to LEF.](#introduction-to-lef)
+- Standard cell design and characterization with CMOS inverter (inv_1 variant) in openlane.
+  - Standard cell layout from scratch.
+  - Challenges.
   - [Create port definition.](#create-port-definition)
   - [Set `port class` and `port use` attributes for a layout.](#set-port-class-and-port-use-attributes-for-a-layout)
   - [Defining LEF properties and extracting LEF file.](#defining-lef-properties-and-extracting-lef-file)

@@ -12,7 +12,7 @@ This repository contains all the information needed to build and run openlane fl
   - [Create port definition.](#create-port-definition)
   - [Set `port class` and `port use` attributes for a layout.](#set-port-class-and-port-use-attributes-for-a-layout)
   - [Defining LEF properties and extracting LEF file.](#defining-lef-properties-and-extracting-lef-file)
-  - [Plugging in the custom cell definition in openlane flow.](plugging-in-the-custom-cell-definition-in-openlane-flow)
+  - [Plugging custom LEF to openlane flow.](plugging-custom-lef-to-openlane-flow)
   - [Challenges](#challenges)
 - [Limitations.](#limitations)
   
@@ -119,9 +119,9 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
     **Note:**
       Notice that in below figure, sky130_fd_sc_hd__inv_1 isn't present in the no_synth.cells.
    
-   ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/no_synth.JPG?raw=true) 
+      ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/no_synth.JPG?raw=true) 
    
-   - Modify the LEF file definition for sky130_fd_sc_hd__inv_1 with the one extracted in [Step-5](#defining-lef-properties-and-extracting-lef-file) in `sky130_fd_sc_hd.lef` file (`~/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef`)
+   - Modify the LEF file definition for sky130_fd_sc_hd__inv_1 entry with the one extracted in [Step-5](#defining-lef-properties-and-extracting-lef-file) in `sky130_fd_sc_hd.lef` file (`~/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef`)
 
 - Include following configuration settings (specific to picorv32a design) in the `config.tcl` file present in `~/openlane_working_dir/openlane/designs/picorv32a/`:-
      ```bash
@@ -135,9 +135,16 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
      ```
    
    **Note:**
-     The following settings ensure that the flow takes only sky130_fd_sc_hd__inv_1 as the cell to drive the input ports and inserts fillers wherever it finds empty spaces.
+     The above settings ensure that the flow takes only sky130_fd_sc_hd__inv_1 as the cell to drive the input ports and inserts filler cells in empty spaces.
 
-- Run the interactive flow as described [here](https://github.com/efabless/openlane#interactive-mode).
+- Run the interactive flow as described [here.](https://github.com/efabless/openlane#interactive-mode).
+
+## Observation
+
+The custom inverter was successfully included in the picorv32a design.
+
+
+
 # Limitations
 
 At present, OpenLANE has following limitations:

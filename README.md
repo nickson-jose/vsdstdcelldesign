@@ -65,9 +65,13 @@ The goal of the project is to design a single height standard cell and plug this
 
 - The proposed inverter for the design is a single height standard cell, so the dimensions needs to be a multiple of the single height place site; which for skywater 130 node has a nomenclature of `unithd` with dimensions(in microns): 0.46 x 2.72 (width x height). 
 
-- The first step in magic layout tool is to create a bounding box with a width of 1.38 (3 x width(unithd)) and height of 2.72. This can be done by using command `property FIXED_BBOX {0 0 138 27200}` in magic tkcon window.
+- The first step in magic layout tool is to create a bounding box with a width of 1.38 (3 x width(unithd)) and height of 2.72. This can be done by using command `property FIXED_BBOX {0 0 138 272}` in magic tkcon window.
 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/initial_bbox.JPG?raw=true)
+
+- This is followed by defining the ground and power segments (in metal 1), the respective contacts and finally the layout of the logic part. Same procedure can be followed for any standard cell layout.
+
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/initial_metal.JPG?raw=true)
 
 ## Create port definition
 

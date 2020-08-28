@@ -24,7 +24,7 @@ The flow-chart below gives a better picture of openlane flow as a whole (**Image
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/openlane.flow.1.png?raw=true)
   
 # Overview of Physical Design flow
-Place and Route (PnR) is the core of any ASIC implementation and OpenLANE integrates into it several key open source tools which perform each of the respective stages of PnR.
+Place and Route (PnR) is the core of any ASIC implementation and Openlane flow integrates into it several key open source tools which perform each of the respective stages of PnR.
 Below are the stages and the respective tools (in ( )) that are called by openlane for the functionalities as described:
 - Synthesis
   - Generating gate-level netlist ([yosys](https://github.com/YosysHQ/yosys)).
@@ -50,7 +50,7 @@ Below are the stages and the respective tools (in ( )) that are called by openla
 Detailed description on how to build and invoke openlane is given in this [link](https://github.com/njose939/openlane_build_script).
 
 #  Introduction to LEF
-For a PnR tool to correctly place and route a block (a macro or a std. cell), it doesn't need to know entire layout information of the block; just the pin positions, PR boundary is sufficient. These minimal and abstracted information is provided by the Library Exchange Format (LEF) file. LEF file also serves the purpose of protecting intellectual property and is of two types:
+For a PnR tool to correctly place and route a block (a macro or a std. cell), it doesn't need to know entire layout information of the block; just the pin positions, PR boundary is sufficient. These minimal and abstracted information is provided by the Library Exchange Format (LEF) file. LEF file also serves the purpose of protecting intellectual property and is basically of two types:
 - Cell LEF - It's an abstract view of the cell and only gives information about PR boundary, pin position and metal layer information of the cell.
 - Technology LEF - It contains information about available metal layer, via information, DRCs of particular technology used by placer and router etc..
 The below diagram highlights the difference between a layout and a LEF:

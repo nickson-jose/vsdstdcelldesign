@@ -19,7 +19,8 @@ This repository contains all the information needed to build and run openlane fl
 - [Future work.](#future-work)
 - [Limitations.](#limitations)
 - [Acknowledgements.](#acknowledgements)
- # Introduction to Openlane flow
+
+# Introduction to Openlane flow
 OpenLANE is a completely automated RTL to GDSII flow which embeds in it different opensource tools, namely, OpenROAD, Yosys, ABC, Magic etc., apart from many custom methodology scripts for design exploration and optimization. Openlane is built around Skywater 130nm process node and is capable of performing full ASIC implementation steps from RTL all the way down to GDSII. 
 The flow-chart below gives a better picture of openlane flow as a whole (**Image Courtesy:** [efabless/openlane](https://github.com/efabless/openlane/blob/master/doc/openlane.flow.1.png))
 
@@ -55,7 +56,7 @@ Detailed description on how to build and invoke openlane is given in this [link]
 For a PnR tool to correctly place and route a block (a macro or a std. cell), it doesn't need to know entire layout information of the block; just the pin positions, PR boundary is sufficient. These minimal and abstracted information is provided to the tool by the Library Exchange Format (LEF) file. LEF file also serves the purpose of protecting intellectual property and is basically of two types:
 - Cell LEF - It's an abstract view of the cell and only gives information about PR boundary, pin position and metal layer information of the cell.
 - Technology LEF - It contains information about available metal layer, via information, DRCs of particular technology used by placer and router etc..
-The below diagram highlights the difference between a layout and a LEF:
+The below diagram highlights the difference between a layout and a LEF (**Image Courtesy:** Google):
 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/layout_vs_LEF.JPG?raw=true)
 
@@ -185,5 +186,6 @@ At present, Openlane has following limitations:
 Neverthless, Openlane has a huge community support and improvements are getting pushed every other day. For more details on openLANE do visit [openlane1](https://github.com/efabless/openlane/) [openlane2](https://www.youtube.com/watch?v=Vhyv0eq_mLU).
 
 # Acknowledgements
-- [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd
+- Anagha Ghosh, Founder (VSD Corp. Pvt. Ltd)
+- [Kunal Ghosh](https://github.com/kunalg123), Co-founder (VSD Corp. Pvt. Ltd)
 - [Ahmed Ghazy](https://github.com/ax3ghazy), openlane team, efabless

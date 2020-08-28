@@ -141,7 +141,9 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
 
 ## Observation
 
-The custom inverter was successfully included in the picorv32a design.
+The custom inverter was successfully included in the picorv32a design. Below is the final routed picorv32a design with the custom cell zoomed in and highlighted.
+
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/final_routing.JPG?raw=true) 
 
 
 

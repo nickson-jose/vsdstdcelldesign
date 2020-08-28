@@ -115,6 +115,10 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
 
 To ensure openlane picks the custom cell in the design.
 - Ensure the cell is excluded from no_synth.cells `(~/openlane_working_dir/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/)`.
+#### Note:
+In the below figure, sky130_fd_sc_hd__inv_1 isn't present in the no_synth.cells.
+
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/no_synth.JPG?raw=true) 
 
 # Limitations
 

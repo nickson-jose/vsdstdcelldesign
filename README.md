@@ -71,7 +71,7 @@ The goal of the project is to design a single height standard cell and plug this
 
 - This is followed by defining the ground and power segments (in metal 1), the respective contacts and finally the layout of the logic part. Same procedure can be followed for any standard cell layout.
 
-![alt text](https://github.com/njose939/OpenLane/blob/master/Images/initial_metal.JPG?raw=true)
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/initial_metal2.JPG?raw=true)
 
 ## Create port definition
 

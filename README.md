@@ -13,7 +13,7 @@ This repository contains all the information needed to build and run openlane fl
   - [Set `port class` and `port use` attributes for a layout.](#set-port-class-and-port-use-attributes-for-a-layout)
   - [Defining LEF properties and extracting LEF file.](#defining-lef-properties-and-extracting-lef-file)
   - [Plugging custom LEF to openlane flow.](plugging-custom-lef-to-openlane-flow)
-  - [Observation](#observation)
+  - [Observations](#observations)
   - [Challenges](#challenges)
 - [Limitations.](#limitations)
 - [Acknowledgements](#acknowledgements)
@@ -138,9 +138,9 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
    **Note:**
      The above settings ensure that the flow takes only sky130_fd_sc_hd__inv_1 as the cell to drive the input ports and inserts filler cells in empty spaces.
 
-- Run the interactive flow as described [here.](https://github.com/efabless/openlane#interactive-mode).
+- Run the interactive flow as described [here.](https://github.com/efabless/openlane#interactive-mode)
 
-## Observation
+## Observations
 
 The custom inverter successfully included in the picorv32a design. Below is the final routed picorv32a design with the custom cell zoomed in and highlighted.
 

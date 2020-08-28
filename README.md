@@ -67,7 +67,11 @@ The goal of the project is to design a single height standard cell and plug this
 
 ## About PicoRV32
 
-PicoRV32 is a CPU core that implements the RISC-V RV32IMC Instruction Set. It can be configured as RV32E, RV32I, RV32IC, RV32IM, or RV32IMC core, and optionally contains a built-in interrupt controller. Tools (gcc, binutils, etc..) can be obtained via the RISC-V Website. The examples bundled with PicoRV32 expect various RV32 toolchains to be installed in /opt/riscv32i[m][c]. See the build instructions below for details. PicoRV32 is free and open hardware licensed under the ISC license (a license that is similar in terms to the MIT license or the 2-clause BSD license)
+PicoRV32 is a CPU core that implements the RISC-V RV32IMC Instruction Set. It can be configured as RV32I, RV32IC, RV32IM, or RV32IMC core; where the suffixes stand for:
+- M - Multiply extension
+- I - Base Integer Instructions
+- C - Compressed Instructions
+PicoRV32 is free and open hardware licensed under the ISC license. All features and data-sheet related to picoRV32 core can be obtained [here.](https://www.efabless.com/design_catalog/ip_block/92)
 
 ## Standard cell layout design in Magic
 

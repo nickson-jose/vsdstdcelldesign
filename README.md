@@ -59,11 +59,15 @@ The below diagram highlights the difference between a layout and a LEF:
 
 ## Objective
 
-The goal of the project was to design a single height standard cell and plug this custom cell a bigger design and perform it's PnR in the openlane flow. The standard cell chosen was a basic CMOS inverter and the design into which it was plugged into was a pre-built [picorv32a](https://github.com/efabless/openlane/tree/master/designs/picorv32a) core. 
+The goal of the project is to design a single height standard cell and plug this custom cell into a more complex design and perform it's PnR in the openlane flow. The standard cell chosen is a basic CMOS inverter and the design into which it's plugged into is a pre-built [picorv32a](https://github.com/efabless/openlane/tree/master/designs/picorv32a) core. 
 
 ## Standard cell layout design in Magic.
 
-The proposed  o be designed was a single height standard cell, so the dimension needed to be a multiple of the single height place site; which for skywater 130 node has a nomenclature of `unithd` with dimensions(in microns): 0.46 x 2.72 (width x height).
+- The proposed inverter for the design is a single height standard cell, so the dimensions needs to be a multiple of the single height place site; which for skywater 130 node has a nomenclature of `unithd` with dimensions(in microns): 0.46 x 2.72 (width x height). 
+
+- The first step in magic layout tool is to create a bounding box with a width of 1.38 (3 x width(unithd)) and height of 2.72. This can be done by using command `property FIXED_BBOX {0 0 138 27200}` in magic tkcon window.
+
+
 ## Create port definition
 
 For LEF files, a cell that contains ports is written as a macro cell, and the ports are the declared PINs of the macro. Our objective is to extract LEF from a given layout (here of a simple CMOS inverter) in standard format. Defining port and setting correct class and use attributes to each port is the first step. 

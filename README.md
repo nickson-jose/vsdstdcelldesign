@@ -7,11 +7,11 @@ This repository contains all the information needed to build and run openlane fl
 - [Build and invoke openlane.](#build-and-invoke-openlane)
 - [Introduction to LEF.](#introduction-to-lef)
 - [Standard cell design and characterization of CMOS inverter in openlane.](#standard-cell-design-and-characterization-of-CMOS-inverter-in-openlane)
-  - [Objective](#objective)
-  - [Standard cell layout design in Magic](#standard-cell-layout-design-in-magic)
+  - [Objective.](#objective)
+  - [Standard cell layout design in Magic.](#standard-cell-layout-design-in-magic)
   - [Create port definition.](#create-port-definition)
   - [Set `port class` and `port use` attributes for a layout.](#set-port-class-and-port-use-attributes-for-a-layout)
-  - [Defining LEF properties and extracting LEF file](#defining-lef-properties-and-extracting-lef-file)
+  - [Defining LEF properties and extracting LEF file.](#defining-lef-properties-and-extracting-lef-file)
   - [Plugging in the custom cell definition in openlane flow](plugging-in-the-custom-cell-definition-in-openlane-flow)
   - [Challenges](#challenges)
 - [Limitations.](#limitations)
@@ -56,7 +56,7 @@ The below diagram highlights the difference between a layout and a LEF:
 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/layout_vs_LEF.JPG?raw=true)
 
-# Standard cell design and characterization in openlane.
+# Standard cell design and characterization in openlane
 
 ## Objective
 
@@ -110,6 +110,11 @@ You can delete or remove any port by first selecting the port (key `s`) and then
 Certain properties needs to be set before writing the LEF. As mentioned before, these values are fetched by placer and router to determine, for instance, site where a cell needs to be placed. Macro cell properties common to the LEF/DEF definition but that have no corresponding database interpretation in magic are retained using the cell **property** method in magic. There are specific property names associated with the LEF format. Once the properties are set, `lef write` command writes the LEF file with the same nomenclature as that of the layout (.mag) file.
 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/final_LEF_write.JPG?raw=true) 
+
+## Plugging custom LEF to openlane flow
+
+To ensure openlane picks the custom cell in the design.
+- Ensure the cell is excluded from no_synth.cells `(~/openlane_working_dir/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/)`.
 
 # Limitations
 

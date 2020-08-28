@@ -16,6 +16,7 @@ This repository contains all the information needed to build and run openlane fl
   - [Plugging custom LEF to openlane flow.](plugging-custom-lef-to-openlane-flow)
   - [Observations.](#observations)
   - [Challenges.](#challenges)
+- [Future work](#future-work)
 - [Limitations.](#limitations)
 - [Acknowledgements.](#acknowledgements)
  # Introduction to Openlane flow
@@ -160,6 +161,8 @@ The custom inverter successfully included in the picorv32a design. Below is the 
 - Upon closer inspection, the issue seemed to be with the dimensions of the drawn power and ground rails and also with the positioning of local1 -> metal1 contacts which was then corrected for further iterations.
 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/dimensions.JPG?raw=true)
+
+# Future work
 
 # Limitations
 

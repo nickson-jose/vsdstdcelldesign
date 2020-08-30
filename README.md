@@ -6,7 +6,7 @@ This repository contains all the information needed to build and run openlane fl
 - [Overview of Physical Design flow.](#overview-of-physical-design-flow)
 - [Build and invoke openlane.](#build-and-invoke-openlane)
 - [Introduction to LEF.](#introduction-to-lef)
-- [Standard cell design and characterization of CMOS inverter in openlane.](#standard-cell-design-and-characterization-of-CMOS-inverter-in-openlane)
+- [Standard cell design and characterization in openlane.](#standard-cell-design-and-characterization-in-openlane )
   - [Objective.](#objective)
   - [About PicoRV32.](#about-picorv32)
   - [Standard cell layout design in Magic.](#standard-cell-layout-design-in-magic)

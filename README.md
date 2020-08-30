@@ -13,7 +13,7 @@ This repository contains all the information needed to build and run openlane fl
   - [Create port definition.](#create-port-definition)
   - [Set `port class` and `port use` attributes for a layout.](#set-port-class-and-port-use-attributes-for-a-layout)
   - [Defining LEF properties and extracting LEF file.](#defining-lef-properties-and-extracting-lef-file)
-  - [Plugging custom LEF to openlane flow.](plugging-custom-lef-to-openlane-flow)
+  - [Plugging custom LEF to openlane flow.](#plugging-custom-lef-to-openlane-flow)
   - [Observations.](#observations)
   - [Challenges.](#challenges)
 - [Future work.](#future-work)

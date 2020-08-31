@@ -183,7 +183,7 @@ At present, Openlane has following limitations:
 - Timing Closure.
   - No post-routing optimizations.
 
-Neverthless, Openlane has a huge community support and improvements are getting pushed every other day. For more details on openlane do visit [openlane1](https://github.com/efabless/openlane/) [openlane2](https://www.youtube.com/watch?v=Vhyv0eq_mLU).
+Nevertheless, Openlane has a huge community support and improvements are getting pushed every other day. For more details on openlane do visit [openlane1](https://github.com/efabless/openlane/) [openlane2](https://www.youtube.com/watch?v=Vhyv0eq_mLU).
 
 # Acknowledgements
 - [Kunal Ghosh](https://github.com/kunalg123), Co-founder (VSD Corp. Pvt. Ltd)

@@ -163,7 +163,7 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
       - In the design's config.tcl file add the below line to point to the lef location.
       
         ```bash
-        set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
+         set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
         ```
      - Include the below command to include the additional lef into the flow:
       

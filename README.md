@@ -161,16 +161,15 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
      ### Additional:
          
      If a new custom cell needs to be plugged into openlane flow, include the lefs as below:
-      - In the design's config.tcl file add the below line to point to the lef location.
+     - In the design's config.tcl file add the below line to point to the lef location.
       
-      ```bash
-      set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
-      ```
-      - Include the below command to include the additional lef into the flow:
+      `set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]`
       
-        `set lefs [glob $::env(DESIGN_DIR)/src/*.lef]`
+     - Include the below command to include the additional lef into the flow:
+      
+       `set lefs [glob $::env(DESIGN_DIR)/src/*.lef]`
         
-        `add_lefs -src $lefs`
+       `add_lefs -src $lefs`
 
 ## Observations
 

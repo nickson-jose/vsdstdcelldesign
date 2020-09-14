@@ -134,17 +134,7 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
       Notice that in below figure, sky130_fd_sc_hd__inv_1 isn't present in the no_synth.cells.
    
       ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/no_synth.JPG?raw=true) 
-      
-      ### Additional:
-      If a new custom cell needs to be plugged into openlane flow, include the lefs as below:
-      - In the design's config.tcl file add the below line to point to the lef location.
-      
-        `set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]`
-      
-      - Include the below command to include the additional lef into the flow:
-      
-        `set lefs [glob $::env(DESIGN_DIR)/src/*.lef]`
-        `add_lefs -src $lefs`
+     
    
    - Modify the LEF file definition for sky130_fd_sc_hd__inv_1 entry with the one extracted in [Step-5](#defining-lef-properties-and-extracting-lef-file) in `sky130_fd_sc_hd.lef` file (`~/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef`)
 
@@ -166,6 +156,18 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
   
    **Note:**
      The sample inverter magic file (_sky130_inv.mag_) has been included as a reference resource.
+     
+      
+     ### Additional:
+     If a new custom cell needs to be plugged into openlane flow, include the lefs as below:
+      - In the design's config.tcl file add the below line to point to the lef location.
+      
+        `set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]`
+      
+     - Include the below command to include the additional lef into the flow:
+      
+        `set lefs [glob $::env(DESIGN_DIR)/src/*.lef]`
+        `add_lefs -src $lefs`
 
 ## Observations
 

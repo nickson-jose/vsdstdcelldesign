@@ -135,11 +135,14 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
    
       ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/no_synth.JPG?raw=true) 
       
-      ###Additional
+      ### Additional:
       If a new custom cell needs to be plugged into openlane flow, include the lefs as below:
       - In the design's config.tcl file add the below line to point to the lef location.
+      
         `set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]`
+      
       - Include the below command to include the additional lef into the flow:
+      
         `set lefs [glob $::env(DESIGN_DIR)/src/*.lef]`
         `add_lefs -src $lefs`
    

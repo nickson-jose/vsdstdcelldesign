@@ -1,0 +1,9814 @@
+* Copyright 2020 The SkyWater PDK Authors
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     https://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+* SPDX-License-Identifier: Apache-2.0
+*Auto-converted ../spectremodels/pshort.pm3 by model_spectre_mismatchmaker.rb
+//  converted from amsmodels_s8x/pshort.pm3
+*simulator lang=spectre
+//  BSIMTran Version 0.1.24, Created on 4-26-2002
+//  Username: hai
+//  Command Line: /home/hai/config/cydir/bin/lnx86/bsimtran pmos_bsim4.rf pmos -p -npshort pshort_modelnamechanged.pm3 pshort-overlap.pm PDIV1.PMD pdcv1.pm pshort_bsimtranoutput.pm3 
+//  Working Directory: /home/hai/models/s8/s8tee/models.3.1/pshort/combined
+//  Time: Sun Jun 10 17:40:56 2007
+//  Rule File:  pmos_bsim4.rf
+//  Output File:  pshort_bsimtranoutput.pm3
+//  Input Files:
+//  (1) pshort_modelnamechanged.pm3
+//  (2) pshort-overlap.pm
+//  (3) PDIV1.PMD
+//  (4) pdcv1.pm
+// BSIM3.V3 PMOS Model
+// spectre mismatch params here
+//parameters pshort_lint_slope_spectre = 0.0
+//parameters pshort_wint_slope_spectre = 0.0
+*parameters pshort_toxe_slope_spectre = 0.0
+*parameters pshort_vth0_slope_spectre = 0.0
+*parameters pshort_voff_slope_spectre = 0.0
+*parameters pshort_nfactor_slope_spectre = 0.0
+*statistics {
+  *process {
+*  }
+  *mismatch {
+//    vary pshort_lint_slope_spectre dist=gauss std = 1.0
+//    vary pshort_wint_slope_spectre dist=gauss std = 1.0
+*    vary 0.0 dist=gauss std = 1.0
+*    vary 0.0 dist=gauss std = 1.0
+*    vary 0.0 dist=gauss std = 1.0
+*    vary 0.0 dist=gauss std = 1.0
+*  }
+*}
+*inline subckt pshort (d g s b)
+*parameters l = 1 w = 1 ad = 0 as = 0 pd = 0 ps = 0 nrd = 0 nrs = 0 sa = 0 sb = 0 sd = 0 mult = 1 nf = 1
+*pshort (d g s b) pshort_model 1 = 1 w = w ad = ad as = as pd = pd ps = ps nrd = nrd nrs = nrs sa = sa sb = sb sd = sd nf = nf
+*model pshort_model bsim4 {
+.model pshort_model.0 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 1.45e-07 lmax = 1.55e-07 wmin = 1.255e-06 wmax = 1.265e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.0652+0.0 
++ k1 = 1.3152469 
++ k2 = -0.27798063+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 68611+0.0 
++ ua = -2.4423e-009+0.0 
++ ub = 2.0699352e-018+0.0 
++ uc = 1.6133739e-013 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0025134+0.0 
++ a0 = 0.91285081+0.0 
++ keta = -0.020464881+0.0 
++ a1 = 0 
++ a2 = 0.87366558 
++ ags = 1.25+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.25076476+0.0 
++ nfactor = 1.9+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.21064695+0.0 
++ etab = -0.014728557 
++ dsub = 0.26 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.61630162+0.0 
++ pdiblc1 = 0.14215108 
++ pdiblc2 = 0.0026509038 
++ pdiblcb = -0.15188768 
++ drout = 1 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.1788025e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 7.9381315 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 4.0078966e-010+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.70976+0.0 
++ kt2 = -0.12 
++ at = 50942 
++ ute = -0.21243 
++ ua1 = 1.8303e-010 
++ ub1 = 3.6891e-019 
++ uc1 = 6.4484e-012 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 1.04e-06
++ sbref = 1.04e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.1 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 1.45e-07 lmax = 1.55e-07 wmin = 1.675e-06 wmax = 1.685e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.02+0.0 
++ k1 = 1.3255051 
++ k2 = -0.28016116+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 59524+0.0 
++ ua = -2.4816e-009+0.0 
++ ub = 2.1055982e-018+0.0 
++ uc = 9.1597053e-014 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0024424+0.0 
++ a0 = 0.80890904+0.0 
++ keta = 0.027840733+0.0 
++ a1 = 0 
++ a2 = 0.9995 
++ ags = 1.25+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.27372667+0.0 
++ nfactor = 1.9+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.3010182+0.0 
++ etab = -0.035338434 
++ dsub = 0.26 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.47998966+0.0 
++ pdiblc1 = 0.0195 
++ pdiblc2 = 0.00043 
++ pdiblcb = -2.4222865e-005 
++ drout = 1 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.3226724e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 7.537679 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 2.8211658e-010+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.70976+0.0 
++ kt2 = -0.12 
++ at = 39225 
++ ute = -0.21243 
++ ua1 = 1.6473e-010 
++ ub1 = 3.6891e-019 
++ uc1 = 6.4484e-012 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 1.04e-06
++ sbref = 1.04e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.2 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 9.95e-07 lmax = 1.005e-06 wmin = 9.95e-07 wmax = 1.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.005+0.0 
++ k1 = 0.45361058 
++ k2 = 0.017567785+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 28810.641+0.0 
++ ua = -7.4785951e-010+0.0 
++ ub = 6.5707758e-019+0.0 
++ uc = -4.8679745e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0072271+0.0 
++ a0 = 0.63175+0.0 
++ keta = -0.037840736+0.0 
++ a1 = 0 
++ a2 = 0.8 
++ ags = 1.153125+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.17660159+0.0 
++ nfactor = 1.9+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.08+0.0 
++ etab = -0.007 
++ dsub = 0.56 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.37137649+0.0 
++ pdiblc1 = 0.38223933 
++ pdiblc2 = 0.000215 
++ pdiblcb = -0.025 
++ drout = 0.9112528 
++ pscbe1 = 8e+008 
++ pscbe2 = 8.4098587e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 8.9010262 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1e-010+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.51384673+0.0 
++ kt2 = -0.06387541 
++ at = 22950.061 
++ ute = -1.1934315 
++ ua1 = -2.4046243e-010 
++ ub1 = 4.7991978e-019 
++ uc1 = 4.7436576e-011 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 2.75e-06
++ sbref = 2.74e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.3 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 1.995e-06 lmax = 2.005e-06 wmin = 9.95e-07 wmax = 1.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.0193+0.0 
++ k1 = 0.46123612 
++ k2 = 0.019412161+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 53437.5+0.0 
++ ua = -1.0211363e-009+0.0 
++ ub = 7.9306706e-019+0.0 
++ uc = -4.5032348e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.006259+0.0 
++ a0 = 1.1302+0.0 
++ keta = -0.0048142243+0.0 
++ a1 = 0 
++ a2 = 0.8 
++ ags = 0.37980837+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.17603939+0.0 
++ nfactor = 1.5884088+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.0005+0.0 
++ etab = -0.00050000149 
++ dsub = 0.26 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.35228743+0.0 
++ pdiblc1 = 0.39 
++ pdiblc2 = 0.000215 
++ pdiblcb = -0.225 
++ drout = 0.56 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.3721337e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 3.048987e-012 
++ alpha1 = -2.9238605e-015 
++ beta0 = 3 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 2.4838246e-010+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.47097+0.0 
++ kt2 = -0.045529 
++ at = 7459.5 
++ ute = -0.89505 
++ ua1 = -1.5331e-010 
++ ub1 = 7.4669e-019 
++ uc1 = 6.1866e-011 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 3.0e-06
++ sbref = 3.0e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.4 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 3.995e-06 lmax = 4.005e-06 wmin = 9.95e-07 wmax = 1.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.01+0.0 
++ k1 = 0.44975853 
++ k2 = 0.023544581+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 42745.77+0.0 
++ ua = -8.2697914e-010+0.0 
++ ub = 6.6035544e-019+0.0 
++ uc = -5.4570621e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0068894+0.0 
++ a0 = 1.1794+0.0 
++ keta = 0.0032223923+0.0 
++ a1 = 0 
++ a2 = 0.8 
++ ags = 0.29875546+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.1748426+0.0 
++ nfactor = 1.9+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.08+0.0 
++ etab = -0.07 
++ dsub = 0.56 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.038003634+0.0 
++ pdiblc1 = 0.39 
++ pdiblc2 = 0.0010378863 
++ pdiblcb = -0.225 
++ drout = 0.56 
++ pscbe1 = 7.9999998e+008 
++ pscbe2 = 9.5028802e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 0 
++ alpha1 = 0 
++ beta0 = 30 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1.5747859e-010+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.46128+0.0 
++ kt2 = -0.026742 
++ at = 55268.5 
++ ute = -0.07 
++ ua1 = 1.9196e-009 
++ ub1 = -1.0155e-018 
++ uc1 = -8e-011 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 3.0e-06
++ sbref = 3.0e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.5 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 7.995e-06 lmax = 8.005e-06 wmin = 9.95e-07 wmax = 1.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -0.99608+0.0 
++ k1 = 0.49177002 
++ k2 = 0.012599753+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 55237.817+0.0 
++ ua = -1.3880621e-009+0.0 
++ ub = 1.048282e-018+0.0 
++ uc = -3.8916596e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0048205252+0.0 
++ a0 = 1.29386+0.0 
++ keta = 0.0066402373+0.0 
++ a1 = 0 
++ a2 = 0.8 
++ ags = 0.20242817+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.17895891+0.0 
++ nfactor = 1.4721938+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.08+0.0 
++ etab = -0.07 
++ dsub = 0.56 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.0017402344+0.0 
++ pdiblc1 = 0.39 
++ pdiblc2 = 0.00056783834 
++ pdiblcb = -0.225 
++ drout = 0.56 
++ pscbe1 = 7.9998529e+008 
++ pscbe2 = 1.0771971e-008 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 0 
++ alpha1 = 0 
++ beta0 = 30 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1.4670794e-010+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.54561+0.0 
++ kt2 = -0.052484 
++ at = 10000 
++ ute = -1.2595 
++ ua1 = -2.5605e-010 
++ ub1 = 4.9434e-019 
++ uc1 = 8.1951e-012 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 3.0e-06
++ sbref = 3.0e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.6 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 1.45e-07 lmax = 1.55e-07 wmin = 9.95e-07 wmax = 1.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -0.97755+0.0 
++ k1 = 1.4974388 
++ k2 = -0.34240453+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 55335+0.0 
++ ua = -2.5669e-009+0.0 
++ ub = 2.1902542e-018+0.0 
++ uc = 2.3206046e-013 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0020949+0.0 
++ a0 = 0.72595373+0.0 
++ keta = -0.0003767501+0.0 
++ a1 = 0 
++ a2 = 0.9995 
++ ags = 1.25+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.28041511+0.0 
++ nfactor = 1.892779+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.34230525+0.0 
++ etab = -1.1566507e-013 
++ dsub = 0.26628854 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.45374464+0.0 
++ pdiblc1 = 0.0195 
++ pdiblc2 = 0.00043 
++ pdiblcb = -2.4414063e-005 
++ drout = 1 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.3761341e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 7.2512308 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 9.1989212e-010+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.70976+0.0 
++ kt2 = -0.12 
++ at = 21109 
++ ute = -0.21243 
++ ua1 = 1.0762e-010 
++ ub1 = 3.6891e-019 
++ uc1 = 7.961e-012 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 1.04e-06
++ sbref = 1.04e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.7 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 1.75e-07 lmax = 1.85e-07 wmin = 9.95e-07 wmax = 1.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -0.95759+0.0 
++ k1 = 1.1286524 
++ k2 = -0.20642701+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 81677+0.0 
++ ua = -2.3466042e-009+0.0 
++ ub = 1.9914931e-018+0.0 
++ uc = 2.2913949e-013 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0027565+0.0 
++ a0 = 1.087+0.0 
++ keta = 0.027122826+0.0 
++ a1 = 0 
++ a2 = 0.68678659 
++ ags = 1.25+0.0 
++ b0 = 0+0.0 
++ b1 = 2.1073424e-024+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.24161658+0.0 
++ nfactor = 1.9+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.21136947+0.0 
++ etab = -0.031554764 
++ dsub = 0.26948731 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.62205899+0.0 
++ pdiblc1 = 0.15224245 
++ pdiblc2 = 0.0023148811 
++ pdiblcb = -0.075 
++ drout = 1 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.3883381e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 8.7923713 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1e-010+0.0 
++ bgidl = 1.0029534e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.63808+0.0 
++ kt2 = -0.12 
++ at = 59144 
++ ute = -0.21616 
++ ua1 = 1.505e-010 
++ ub1 = 4.39e-019 
++ uc1 = 9.4135e-013 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 1.1e-06
++ sbref = 1.1e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.8 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 2.45e-07 lmax = 2.55e-07 wmin = 9.95e-07 wmax = 1.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -0.99068+0.0 
++ k1 = 0.58024567 
++ k2 = -0.012344333+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 123990.79+0.0 
++ ua = -1.5758775e-009+0.0 
++ ub = 1.3921314e-018+0.0 
++ uc = 5.5432313e-014 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0054984+0.0 
++ a0 = 0.81211+0.0 
++ keta = -0.0099696456+0.0 
++ a1 = 0 
++ a2 = 0.52372326 
++ ags = 0.42180356+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.21482801+0.0 
++ nfactor = 1.9+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.49+0.0 
++ etab = -6.25e-005 
++ dsub = 0.62800029 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.63715328+0.0 
++ pdiblc1 = 0.46195031 
++ pdiblc2 = 0.011067434 
++ pdiblcb = -0.225 
++ drout = 0.43167959 
++ pscbe1 = 7.9992886e+008 
++ pscbe2 = 9.2096719e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 9.2931629 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1e-010+0.0 
++ bgidl = 1.2773568e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.51207+0.0 
++ kt2 = -0.017592 
++ at = 66556 
++ ute = -0.18527 
++ ua1 = 4.0254e-010 
++ ub1 = 4.39e-019 
++ uc1 = 5.7234e-013 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 1.25e-06
++ sbref = 1.24e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.9 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 4.95e-07 lmax = 5.05e-07 wmin = 9.95e-07 wmax = 1.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1+0.0 
++ k1 = 0.50911445 
++ k2 = 0.0041427676+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 74041+0.0 
++ ua = -1.1297907e-009+0.0 
++ ub = 9.744598e-019+0.0 
++ uc = -2.1796978e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0062005+0.0 
++ a0 = 1.1353+0.0 
++ keta = -0.033356713+0.0 
++ a1 = 0 
++ a2 = 0.8 
++ ags = 1.3126648+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.1859804+0.0 
++ nfactor = 1.9+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.49+0.0 
++ etab = -6.25e-006 
++ dsub = 0.31741848 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.62622696+0.0 
++ pdiblc1 = 0.15515165 
++ pdiblc2 = 0.00053219225 
++ pdiblcb = -0.025 
++ drout = 1 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.317151e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 9.0318843 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 3.7836505e-010+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.50846+0.0 
++ kt2 = -0.055188 
++ at = 65000 
++ ute = -0.24063 
++ ua1 = 5.5621e-010 
++ ub1 = 5.5151e-019 
++ uc1 = 2.432e-011 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 1.75e-06
++ sbref = 1.74e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.10 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 1.45e-07 lmax = 1.55e-07 wmin = 1.995e-06 wmax = 2.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -0.97864+0.0 
++ k1 = 1.4657817 
++ k2 = -0.34178317+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 58358+0.0 
++ ua = -2.5888e-009+0.0 
++ ub = 2.2070427e-018+0.0 
++ uc = 1.0397944e-013 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0021842+0.0 
++ a0 = 0.57015042+0.0 
++ keta = -0.038910431+0.0 
++ a1 = 0 
++ a2 = 0.9995 
++ ags = 0.0640625+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.27300243+0.0 
++ nfactor = 1.9+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.28103229+0.0 
++ etab = -2.7452546e-151 
++ dsub = 0.26029894 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.53574449+0.0 
++ pdiblc1 = 0.0195 
++ pdiblc2 = 0.00043 
++ pdiblcb = -0.025 
++ drout = 1 
++ pscbe1 = 7.8140327e+008 
++ pscbe2 = 9.2985538e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 7.4455034 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1.4770616e-010+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.70976+0.0 
++ kt2 = -0.12 
++ at = 25889 
++ ute = -0.21243 
++ ua1 = 1.3508e-010 
++ ub1 = 3.8367e-019 
++ uc1 = 6.4484e-012 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 1.04e-06
++ sbref = 1.04e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.11 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 9.95e-07 lmax = 1.005e-06 wmin = 2.995e-06 wmax = 3.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1+0.0 
++ k1 = 0.48077988 
++ k2 = 0.016877332+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 52076.876+0.0 
++ ua = -1.3191618e-009+0.0 
++ ub = 9.9701215e-019+0.0 
++ uc = -3.009708e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.005252+0.0 
++ a0 = 1.139+0.0 
++ keta = -0.0079115309+0.0 
++ a1 = 0 
++ a2 = 0.8 
++ ags = 0.57328989+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.19564023+0.0 
++ nfactor = 1.3744146+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.49+0.0 
++ etab = -22.773578 
++ dsub = 0.26 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.62700535+0.0 
++ pdiblc1 = 0.37610116 
++ pdiblc2 = 0.00043 
++ pdiblcb = -0.00077709656 
++ drout = 0.75941084 
++ pscbe1 = 8e+008 
++ pscbe2 = 7.3674496e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 8.8770833 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1e-010+0.0 
++ bgidl = 1.1984227e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.44959+0.0 
++ kt2 = -0.050195 
++ at = 64793 
++ ute = -0.40685 
++ ua1 = 2.5217e-010 
++ ub1 = 5.1252e-019 
++ uc1 = 9.446e-011 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 2.75e-06
++ sbref = 2.74e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.12 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 1.995e-06 lmax = 2.005e-06 wmin = 2.995e-06 wmax = 3.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.0251+0.0 
++ k1 = 0.51320198 
++ k2 = -0.0022346833+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 24613.898+0.0 
++ ua = -7.9601337e-010+0.0 
++ ub = 6.5199713e-019+0.0 
++ uc = -6.4508638e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0071794+0.0 
++ a0 = 1.0021+0.0 
++ keta = -0.021786634+0.0 
++ a1 = 0 
++ a2 = 0.8 
++ ags = 0.53430225+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.1918163+0.0 
++ nfactor = 1.5680269+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.08+0.0 
++ etab = -0.07 
++ dsub = 0.56 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.41578123+0.0 
++ pdiblc1 = 0.39 
++ pdiblc2 = 0.000215 
++ pdiblcb = -0.0013376645 
++ drout = 0.56 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.0332673e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 5.0432903e-011 
++ alpha1 = 1e-010 
++ beta0 = 6.5167702 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1.5891284e-010+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.47463+0.0 
++ kt2 = -0.056201 
++ at = 27226 
++ ute = -1.0471 
++ ua1 = -1.7587e-010 
++ ub1 = 6.1469e-019 
++ uc1 = 1.0103e-011 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 3.0e-06
++ sbref = 3.0e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.13 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 3.995e-06 lmax = 4.005e-06 wmin = 2.995e-06 wmax = 3.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.0425+0.0 
++ k1 = 0.45544295 
++ k2 = 0.017209681+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 29822.135+0.0 
++ ua = -2.8340104e-010+0.0 
++ ub = 3.9493106e-019+0.0 
++ uc = -8.5236227e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0095057+0.0 
++ a0 = 1.1338+0.0 
++ keta = -0.0096897358+0.0 
++ a1 = 0 
++ a2 = 0.8 
++ ags = 0.31273428+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.20325421+0.0 
++ nfactor = 1.6422165+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.08+0.0 
++ etab = -0.07 
++ dsub = 0.56 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.4127159+0.0 
++ pdiblc1 = 0.39 
++ pdiblc2 = 0.000215 
++ pdiblcb = -0.025 
++ drout = 0.56 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.5112332e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1.4560427e-011 
++ alpha1 = 8.8540421e-013 
++ beta0 = 3 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1.3573869e-010+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.45286769+0.0 
++ kt2 = -0.051427601 
++ at = 46321.73 
++ ute = -0.15559115 
++ ua1 = 2.1813426e-009 
++ ub1 = -9.2319056e-019 
++ uc1 = -1.3034169e-010 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 3.0e-06
++ sbref = 3.0e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.14 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 7.995e-06 lmax = 8.005e-06 wmin = 2.995e-06 wmax = 3.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.0502+0.0 
++ k1 = 0.42302944 
++ k2 = 0.029470664+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 53438+0.0 
++ ua = -1.8971577e-010+0.0 
++ ub = 3.1380962e-019+0.0 
++ uc = -9.8608028e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0096116+0.0 
++ a0 = 1.1296+0.0 
++ keta = 4.9707517e-006+0.0 
++ a1 = 0 
++ a2 = 0.8 
++ ags = 0.16627013+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.21413558+0.0 
++ nfactor = 1.706221+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.08+0.0 
++ etab = -0.07 
++ dsub = 0.56 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.14877095+0.0 
++ pdiblc1 = 0.39 
++ pdiblc2 = 0.00019189 
++ pdiblcb = -0.025 
++ drout = 0.56 
++ pscbe1 = 7.5712828e+008 
++ pscbe2 = 9.873241e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1.7815831e-011 
++ alpha1 = 6.3056523e-017 
++ beta0 = 9.6797043 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1e-010+0.0 
++ bgidl = 1.3525405e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.4443203+0.0 
++ kt2 = -0.052664618 
++ at = 90000 
++ ute = -0.17124159 
++ ua1 = 2.1098632e-009 
++ ub1 = -7.3847396e-019 
++ uc1 = 1.1059776e-010 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 3.0e-06
++ sbref = 3.0e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.15 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 1.45e-07 lmax = 1.55e-07 wmin = 2.995e-06 wmax = 3.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.018+0.0 
++ k1 = 1.3168639 
++ k2 = -0.28483489+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 62767+0.0 
++ ua = -2.4824e-009+0.0 
++ ub = 2.1281765e-018+0.0 
++ uc = 1.970052e-013 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0026317+0.0 
++ a0 = 0.84981148+0.0 
++ keta = 0.014244979+0.0 
++ a1 = 0 
++ a2 = 0.9995 
++ ags = 1.25+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.29628465+0.0 
++ nfactor = 1.9+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.33076312+0.0 
++ etab = -0.01389211 
++ dsub = 0.26 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.4433904+0.0 
++ pdiblc1 = 0.0195 
++ pdiblc2 = 0.00043 
++ pdiblcb = -4.8637071e-005 
++ drout = 1 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.5586458e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 7.3823117 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 2.7158891e-010+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.695+0.0 
++ kt2 = -0.12196 
++ at = 38000 
++ ute = -0.3 
++ ua1 = 1.3462e-010 
++ ub1 = 3.927e-019 
++ uc1 = 3.7985e-011 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 1.04e-06
++ sbref = 1.04e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.16 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 1.75e-07 lmax = 1.85e-07 wmin = 2.995e-06 wmax = 3.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.004+0.0 
++ k1 = 1.0376715 
++ k2 = -0.17335648+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 88456+0.0 
++ ua = -2.2421727e-009+0.0 
++ ub = 1.8536584e-018+0.0 
++ uc = 2.5234343e-013 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0029971+0.0 
++ a0 = 0.89088+0.0 
++ keta = 0.023895141+0.0 
++ a1 = 0 
++ a2 = 0.67187683 
++ ags = 1.25+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.22630768+0.0 
++ nfactor = 1.7534082+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.18201237+0.0 
++ etab = -0.078353952 
++ dsub = 0.27170577 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.63088962+0.0 
++ pdiblc1 = 0.18080115 
++ pdiblc2 = 0.0040267418 
++ pdiblcb = -0.0001934424 
++ drout = 1 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.4769552e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 8.580652 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 3.0157032e-010+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.598+0.0 
++ kt2 = -0.12196 
++ at = 68317 
++ ute = -0.3 
++ ua1 = 1.3462e-010 
++ ub1 = 3.927e-019 
++ uc1 = 6.0045e-013 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 1.1e-06
++ sbref = 1.1e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.17 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 2.45e-07 lmax = 2.55e-07 wmin = 2.995e-06 wmax = 3.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -0.964+0.0 
++ k1 = 0.77076332 
++ k2 = -0.082949567+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 77620+0.0 
++ ua = -1.9102726e-009+0.0 
++ ub = 1.5401215e-018+0.0 
++ uc = -6.4335368e-012 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0041176+0.0 
++ a0 = 0.50091+0.0 
++ keta = -0.077084505+0.0 
++ a1 = 0 
++ a2 = 0.8 
++ ags = 0.90459965+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.20537164+0.0 
++ nfactor = 1.8793354+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.29288956+0.0 
++ etab = -5.0000128e-005 
++ dsub = 0.5018771 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.84907102+0.0 
++ pdiblc1 = 0.38718759 
++ pdiblc2 = 0.0077688684 
++ pdiblcb = -0.12475545 
++ drout = 0.58591194 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.2265127e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 8.9226154 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 2.5628906e-009+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 60.778499+0.0 
++ egidl = 1.3658824 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.53419+0.0 
++ kt2 = -0.060854 
++ at = 56209 
++ ute = -0.3 
++ ua1 = 2.0193e-010 
++ ub1 = 3.927e-019 
++ uc1 = 6.0045e-013 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 1.25e-06
++ sbref = 1.24e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.18 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 4.95e-07 lmax = 5.05e-07 wmin = 2.995e-06 wmax = 3.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -0.992+0.0 
++ k1 = 0.45068637 
++ k2 = 0.032260684+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 73912+0.0 
++ ua = -1.2118425e-009+0.0 
++ ub = 1.0568551e-018+0.0 
++ uc = -7.1566623e-012 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.006132+0.0 
++ a0 = 1.0051+0.0 
++ keta = -0.012396657+0.0 
++ a1 = 0 
++ a2 = 0.84119211 
++ ags = 1.0025754+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.19696087+0.0 
++ nfactor = 1.3845847+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.49+0.0 
++ etab = -0.00046590341 
++ dsub = 0.28932681 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.62284281+0.0 
++ pdiblc1 = 0.18912731 
++ pdiblc2 = 0.00058741392 
++ pdiblcb = -0.225 
++ drout = 1 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.3232486e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 9.3861845 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 2.0755899e-010+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.50846+0.0 
++ kt2 = -0.055188 
++ at = 73880 
++ ute = -0.31763 
++ ua1 = 5.5621e-010 
++ ub1 = 4.1736e-019 
++ uc1 = 2.432e-011 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 1.75e-06
++ sbref = 1.74e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.19 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 9.95e-07 lmax = 1.005e-06 wmin = 4.995e-06 wmax = 5.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.0354+0.0 
++ k1 = 0.51518623 
++ k2 = -0.0012746592+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 27963.813+0.0 
++ ua = -1.122802e-009+0.0 
++ ub = 9.9211788e-019+0.0 
++ uc = -3.022645e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0068302+0.0 
++ a0 = 0.73977+0.0 
++ keta = -0.052199769+0.0 
++ a1 = 0 
++ a2 = 0.8 
++ ags = 1.1223202+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.19282254+0.0 
++ nfactor = 1.803914+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.49+0.0 
++ etab = -0.0012500664 
++ dsub = 0.26 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.42072955+0.0 
++ pdiblc1 = 0.38126049 
++ pdiblc2 = 0.00043 
++ pdiblcb = -0.00076262347 
++ drout = 0.81189156 
++ pscbe1 = 8e+008 
++ pscbe2 = 7.2098721e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 8.9305788 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1e-010+0.0 
++ bgidl = 1.1834062e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.47401239+0.0 
++ kt2 = -0.047712156 
++ at = 25416.096 
++ ute = -0.23992986 
++ ua1 = 1.9047573e-009 
++ ub1 = -1.2373089e-018 
++ uc1 = -1.1188284e-011 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 2.75e-06
++ sbref = 2.74e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.20 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 1.995e-06 lmax = 2.005e-06 wmin = 4.995e-06 wmax = 5.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.0434+0.0 
++ k1 = 0.441928 
++ k2 = 0.028912751+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 53437.5+0.0 
++ ua = -9.8137786e-010+0.0 
++ ub = 9.0965495e-019+0.0 
++ uc = -3.4413404e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0073345+0.0 
++ a0 = 1.1942+0.0 
++ keta = -0.016745386+0.0 
++ a1 = 0 
++ a2 = 0.8 
++ ags = 0.42664895+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.20413517+0.0 
++ nfactor = 1.313002+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.00050000191+0.0 
++ etab = -0.00050000042 
++ dsub = 0.26 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.6390771+0.0 
++ pdiblc1 = 0.39 
++ pdiblc2 = 0.00043 
++ pdiblcb = -0.025 
++ drout = 0.56 
++ pscbe1 = 7.8845095e+008 
++ pscbe2 = 9.4549435e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 8.2326697 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1e-010+0.0 
++ bgidl = 1.3452252e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.46529126+0.0 
++ kt2 = -0.044800084 
++ at = 79543.736 
++ ute = -0.29475285 
++ ua1 = 1.4994695e-009 
++ ub1 = -5.4876923e-019 
++ uc1 = 1.1407361e-010 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 3.0e-06
++ sbref = 3.0e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.21 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 3.995e-06 lmax = 4.005e-06 wmin = 4.995e-06 wmax = 5.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.0554+0.0 
++ k1 = 0.41493399 
++ k2 = 0.038381535+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 56763.737+0.0 
++ ua = -3.9589575e-010+0.0 
++ ub = 5.1890668e-019+0.0 
++ uc = -6.119559e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0094763+0.0 
++ a0 = 1.1906+0.0 
++ keta = -0.010442146+0.0 
++ a1 = 0 
++ a2 = 0.8 
++ ags = 0.30079431+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.20758432+0.0 
++ nfactor = 1.4973257+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.08+0.0 
++ etab = -0.07 
++ dsub = 0.56 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.44022027+0.0 
++ pdiblc1 = 0.39 
++ pdiblc2 = 0.0001075 
++ pdiblcb = -0.025 
++ drout = 0.56 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.4653461e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 6.6700366 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1e-010+0.0 
++ bgidl = 1.4866338e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.46286769+0.0 
++ kt2 = -0.051427601 
++ at = 094321.73 
++ ute = -0.20559115 
++ ua1 = 2.1813426e-009 
++ ub1 = -9.2319056e-019 
++ uc1 = -1.3034169e-010 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 3.0e-06
++ sbref = 3.0e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.22 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 7.995e-06 lmax = 8.005e-06 wmin = 4.995e-06 wmax = 5.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.0559+0.0 
++ k1 = 0.43056354 
++ k2 = 0.033552779+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 160312.5+0.0 
++ ua = -5.5284971e-010+0.0 
++ ub = 5.7443771e-019+0.0 
++ uc = -6.3227866e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0085639+0.0 
++ a0 = 1.2059+0.0 
++ keta = -0.0048615622+0.0 
++ a1 = 0 
++ a2 = 0.90977388 
++ ags = 0.21791559+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.21105937+0.0 
++ nfactor = 1.5008954+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.08+0.0 
++ etab = -0.07 
++ dsub = 0.56 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.22728372+0.0 
++ pdiblc1 = 0.39 
++ pdiblc2 = 0.00016870007 
++ pdiblcb = -0.025 
++ drout = 0.56 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.077064e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 6.3511639 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1e-010+0.0 
++ bgidl = 1.5424014e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.43605364+0.0 
++ kt2 = -0.050535666 
++ at = 90000 
++ ute = -0.16471211 
++ ua1 = 1.9593569e-009 
++ ub1 = -7.5242716e-019 
++ uc1 = 1.1193066e-010 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 3.0e-06
++ sbref = 3.0e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.23 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 1.45e-07 lmax = 1.55e-07 wmin = 4.995e-06 wmax = 5.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.0213+0.0 
++ k1 = 1.292041 
++ k2 = -0.27943118+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 68644+0.0 
++ ua = -2.5207e-009+0.0 
++ ub = 2.1497621e-018+0.0 
++ uc = 1.3933536e-013 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0026411+0.0 
++ a0 = 0.95628558+0.0 
++ keta = -0.0098450238+0.0 
++ a1 = 0 
++ a2 = 0.83110554 
++ ags = 1.25+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.26814403+0.0 
++ nfactor = 1.9+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.29347494+0.0 
++ etab = -0.014445067 
++ dsub = 0.26 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.46055509+0.0 
++ pdiblc1 = 0.019500056 
++ pdiblc2 = 0.0014727467 
++ pdiblcb = -0.075 
++ drout = 1 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.3135595e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 7.6984199 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1.3920965e-010+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.693+0.0 
++ kt2 = -0.12196 
++ at = 38000 
++ ute = -0.3 
++ ua1 = 1.3462e-010 
++ ub1 = 3.927e-019 
++ uc1 = 3.7985e-011 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 1.04e-06
++ sbref = 1.04e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.24 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 1.75e-07 lmax = 1.85e-07 wmin = 4.995e-06 wmax = 5.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.004+0.0 
++ k1 = 1.035054 
++ k2 = -0.17495984+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 77466+0.0 
++ ua = -2.2596593e-009+0.0 
++ ub = 1.8740807e-018+0.0 
++ uc = 2.1939953e-013 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0032489+0.0 
++ a0 = 0.51935+0.0 
++ keta = -0.049156996+0.0 
++ a1 = 0 
++ a2 = 0.76127491 
++ ags = 1.25+0.0 
++ b0 = 0+0.0 
++ b1 = 2.1073424e-024+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.24011109+0.0 
++ nfactor = 1.9+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.19769484+0.0 
++ etab = -0.055771336 
++ dsub = 0.30311035 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.63770979+0.0 
++ pdiblc1 = 0.19075739 
++ pdiblc2 = 0.004218602 
++ pdiblcb = -0.075 
++ drout = 0.91135477 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.3641435e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 8.5831969 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1e-010+0.0 
++ bgidl = 1.0931445e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.568+0.0 
++ kt2 = -0.1183 
++ at = 53240 
++ ute = -0.3 
++ ua1 = 1.3462e-010 
++ ub1 = 3.927e-019 
++ uc1 = 1.5093e-011 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 1.1e-06
++ sbref = 1.1e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.25 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 2.45e-07 lmax = 2.55e-07 wmin = 4.995e-06 wmax = 5.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -0.96902+0.0 
++ k1 = 0.82329436 
++ k2 = -0.099569738+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 76519+0.0 
++ ua = -2.045889e-009+0.0 
++ ub = 1.6358053e-018+0.0 
++ uc = 1.1896412e-013 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0037126+0.0 
++ a0 = 0.66876525+0.0 
++ keta = -0.10104013+0.0 
++ a1 = 0 
++ a2 = 0.8 
++ ags = 2.2630378+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.19745917+0.0 
++ nfactor = 1.9+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.42121655+0.0 
++ etab = -0.0014146465 
++ dsub = 0.42114336 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.69181881+0.0 
++ pdiblc1 = 0.36806399 
++ pdiblc2 = 0.0066053256 
++ pdiblcb = -0.025 
++ drout = 0.74812414 
++ pscbe1 = 8e+008 
++ pscbe2 = 1.3725902e-008 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 8.5108411e-009 
++ alpha1 = 0 
++ beta0 = 15.614632 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1e-010+0.0 
++ bgidl = 1.7649271e009+0.0 
++ cgidl = 39.040404+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.568+0.0 
++ kt2 = -0.1183 
++ at = 60000 
++ ute = -0.3 
++ ua1 = 1.6828e-010 
++ ub1 = 4.0841e-019 
++ uc1 = 1.5093e-011 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 1.25e-06
++ sbref = 1.24e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.26 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 4.95e-07 lmax = 5.05e-07 wmin = 4.995e-06 wmax = 5.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -0.99431+0.0 
++ k1 = 0.48147074 
++ k2 = 0.021329669+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 73792+0.0 
++ ua = -1.3677772e-009+0.0 
++ ub = 1.1009815e-018+0.0 
++ uc = -1.1898446e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0055557+0.0 
++ a0 = 0.90232+0.0 
++ keta = -0.013964031+0.0 
++ a1 = 0 
++ a2 = 0.80253166 
++ ags = 0.88641503+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.19696621+0.0 
++ nfactor = 1.4818794+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.49+0.0 
++ etab = -3.125e-005 
++ dsub = 0.29198037 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.62385888+0.0 
++ pdiblc1 = 0.0195 
++ pdiblc2 = 0.00043 
++ pdiblcb = -0.225 
++ drout = 1 
++ pscbe1 = 8e+008 
++ pscbe2 = 1e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 9.4138212 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1e-010+0.0 
++ bgidl = 1.2193856e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.50846+0.0 
++ kt2 = -0.055188 
++ at = 70880 
++ ute = -0.31763 
++ ua1 = 4.4497e-010 
++ ub1 = 4.4717e-019 
++ uc1 = 2.432e-011 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 1.75e-06
++ sbref = 1.74e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.27 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 9.95e-07 lmax = 1.005e-06 wmin = 6.995e-06 wmax = 7.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.0303+0.0 
++ k1 = 0.5179279 
++ k2 = -0.00290632+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 71250+0.0 
++ ua = -9.8434765e-010+0.0 
++ ub = 8.9208454e-019+0.0 
++ uc = -3.5594025e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0073808+0.0 
++ a0 = 1.0848+0.0 
++ keta = -0.0263051+0.0 
++ a1 = 0 
++ a2 = 0.9 
++ ags = 0.53216408+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.20136795+0.0 
++ nfactor = 1.7417864+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.49+0.0 
++ etab = -7.4381556 
++ dsub = 0.26 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.61751639+0.0 
++ pdiblc1 = 0.37190449 
++ pdiblc2 = 0.00043 
++ pdiblcb = -0.00074465016 
++ drout = 0.71558706 
++ pscbe1 = 8e+008 
++ pscbe2 = 8.9355217e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 4.4647337e-005 
++ alpha1 = 0 
++ beta0 = 29.894997 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1e-010+0.0 
++ bgidl = 1.3576698e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.47210483+0.0 
++ kt2 = -0.047360635 
++ at = 90827.44 
++ ute = -0.30354133 
++ ua1 = 1.8739274e-009 
++ ub1 = -1.1997499e-018 
++ uc1 = -1.1501394e-011 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 2.75e-06
++ sbref = 2.74e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.28 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 1.995e-06 lmax = 2.005e-06 wmin = 6.995e-06 wmax = 7.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.051+0.0 
++ k1 = 0.43736265 
++ k2 = 0.031706452+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 53437.5+0.0 
++ ua = -8.6616359e-010+0.0 
++ ub = 8.248837e-019+0.0 
++ uc = -3.923953e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0077721+0.0 
++ a0 = 1.1863+0.0 
++ keta = -0.016628379+0.0 
++ a1 = 0 
++ a2 = 0.8 
++ ags = 0.44134013+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.19693365+0.0 
++ nfactor = 1.4642147+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.0005+0.0 
++ etab = -0.00050000043 
++ dsub = 0.26 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.40306146+0.0 
++ pdiblc1 = 0.39 
++ pdiblc2 = 0.00033301928 
++ pdiblcb = -0.025 
++ drout = 0.56 
++ pscbe1 = 7.9955987e+008 
++ pscbe2 = 8.9405959e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 8.152593 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1e-010+0.0 
++ bgidl = 1.0816056e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.46426465+0.0 
++ kt2 = -0.043903272 
++ at = 80980.356 
++ ute = -0.23506459 
++ ua1 = 1.6480828e-009 
++ ub1 = -6.125719e-019 
++ uc1 = -1.6484291e-011 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 3.0e-06
++ sbref = 3.0e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.29 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 3.995e-06 lmax = 4.005e-06 wmin = 6.995e-06 wmax = 7.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.0568+0.0 
++ k1 = 0.4308629 
++ k2 = 0.033407718+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 53437.5+0.0 
++ ua = -5.5086494e-010+0.0 
++ ub = 5.7205917e-019+0.0 
++ uc = -5.9920912e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0087771+0.0 
++ a0 = 1.1646+0.0 
++ keta = -0.011085355+0.0 
++ a1 = 0 
++ a2 = 0.8 
++ ags = 0.28218484+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.20189174+0.0 
++ nfactor = 1.4302911+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.08+0.0 
++ etab = -0.07 
++ dsub = 0.56 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.43362287+0.0 
++ pdiblc1 = 0.39 
++ pdiblc2 = 0.00015694727 
++ pdiblcb = -0.025 
++ drout = 0.56 
++ pscbe1 = 8e+008 
++ pscbe2 = 8.6157876e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 6.0385864 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1.1562359e-010+0.0 
++ bgidl = 1e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.46530874+0.0 
++ kt2 = -0.024824291 
++ at = 093918.77 
++ ute = -0.20559356 
++ ua1 = 1.9942443e-009 
++ ub1 = -8.2058672e-019 
++ uc1 = -1.2871612e-010 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 3.0e-06
++ sbref = 3.0e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.30 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 7.995e-06 lmax = 8.005e-06 wmin = 6.995e-06 wmax = 7.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.0593+0.0 
++ k1 = 0.43448553 
++ k2 = 0.032987346+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 160312.5+0.0 
++ ua = -5.6075701e-010+0.0 
++ ub = 5.3841446e-019+0.0 
++ uc = -6.6549964e-011 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.0084399+0.0 
++ a0 = 1.22+0.0 
++ keta = 0.0051290095+0.0 
++ a1 = 0 
++ a2 = 0.9995 
++ ags = 0.2403728+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.20613645+0.0 
++ nfactor = 1.2442058+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.08+0.0 
++ etab = -0.07 
++ dsub = 0.56 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.0015228006+0.0 
++ pdiblc1 = 0.39 
++ pdiblc2 = 0.0029632464 
++ pdiblcb = -0.025 
++ drout = 0.56 
++ pscbe1 = 8e+008 
++ pscbe2 = 9.3760948e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 4.6464006 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1e-010+0.0 
++ bgidl = 1.181082e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.4485+0.0 
++ kt2 = -0.0075706 
++ at = 90900 
++ ute = -0.33954 
++ ua1 = 1.6104e-009 
++ ub1 = -5.609e-019 
++ uc1 = -1.0858e-010 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 
++ mjsws = 0.29781 
++ pbsws = 0.7418 
++ cjswgs = 2.3894e-010 
++ mjswgs = 0.9274 
++ pbswgs = 1.4338 
+//  
+// STRESS PARAMETERS 
+//  
++ saref = 3.0e-06
++ sbref = 3.0e-06
++ wlod = 0+0.0
++ kvth0 = 0+0.0
++ lkvth0 = 0+0.0
++ wkvth0 = 0+0.0
++ pkvth0 = 0
++ llodvth = 0
++ wlodvth = 1
++ stk2 = 0
++ lodk2 = 1
++ lodeta0 = 1
++ ku0 = 0+0.0
++ lku0 = 0+0.0
++ wku0 = 0+0.0
++ pku0 = 0
++ llodku0 = 0
++ wlodku0 = 1
++ kvsat = 0+0.0
++ steta0 = 0
++ tku0 = 0
+// *****
++)
+
+.model pshort_model.31 pmos (
+// 
+// DC IV MOS PARAMETERS
+// 
++ lmin = 1.45e-07 lmax = 1.55e-07 wmin = 6.995e-06 wmax = 7.005e-06
++ level = 54 
++ tnom = 30 
++ version = 4.5 
++ toxm = 4.23e-009 
++ xj = 1.5e-007 
++ lln = 1 
++ lwn = 1 
++ wln = 1 
++ wwn = 1 
++ lint = -1.3994e-008+0.0 
++ ll = 0 
++ lw = 0 
++ lwl = 0 
++ wint = 7.3039e-009+0.0 
++ wl = 0 
++ ww = 0 
++ wwl = 0 
++ xl = 0 
++ xw = 0 
++ mobmod = 0 
++ binunit = 2 
++ dwg = -5.722e-009 
++ dwb = -1.7864e-008 
+// NEW BSIM4 Parameters(Model Selectors)
++ igcmod = 0 
++ igbmod = 0 
++ rgatemod = 0 
++ rbodymod = 1 
++ trnqsmod = 0 
++ acnqsmod = 0 
++ fnoimod = 1 
++ tnoimod = 1 
++ permod = 1 
++ geomod = 0 
++ rdsmod = 0 
++ tempmod = 0 
+// ******
+// NEW BSIM4 Parameters(4.4 Version)
++ lintnoi = -2.0e-07 
++ vfbsdoff = 0 
++ lambda = 0 
++ vtl = 0 
++ lc = 5e-009 
++ xn = 3 
++ rnoia = 0.69 
++ rnoib = 0.34 
++ tnoia = 25e6 
++ tnoib = 0.0e-6 
+// NEW BSIM4 Parameters(Process Parameters)
++ epsrox = 3.9 
++ toxe = 4.23e-009 
++ dtox = 0 
++ ndep = 1.7e+017 
++ nsd = 1e+020 
++ rshg = 0.1 
+// ***
++ rsh = 1 
+// 
+//  THRESHOLD VOLTAGE PARAMETERS
+// 
++ vth0 = -1.0252+0.0 
++ k1 = 1.2883544 
++ k2 = -0.27784927+0.0 
++ k3 = -15.845 
++ dvt0 = 4.4955 
++ dvt1 = 0.294 
++ dvt2 = 0.015 
++ dvt0w = -4.9772 
++ dvt1w = 1147200 
++ dvt2w = -0.00896 
++ w0 = 0 
++ k3b = 2 
+// NEW BSIM4 Parameters for Level 54
++ phin = 0 
++ lpe0 = 0 
++ lpeb = 0 
++ vbm = -3 
++ dvtp0 = 0 
++ dvtp1 = 0 
+// 
+//  MOBILITY PARAMETERS
+// 
++ vsat = 62851+0.0 
++ ua = -2.5066e-009+0.0 
++ ub = 2.147361e-018+0.0 
++ uc = 1.3106218e-013 
++ rdsw = 547.88+0.0 
++ prwb = -0.32348 
++ prwg = 0.1376 
++ wr = 1 
++ u0 = 0.002831+0.0 
++ a0 = 0.80836322+0.0 
++ keta = -0.0091058086+0.0 
++ a1 = 0 
++ a2 = 0.9995 
++ ags = 1.25+0.0 
++ b0 = 0+0.0 
++ b1 = 0+0.0 
+// NEW BSIM4 Parameters(Mobility Parameters)
++ eu = 1.67 
++ rdswmin = 0 
++ rdw = 0 
++ rdwmin = 0 
++ rsw = 0 
++ rswmin = 0 
+// ****
+// 
+//  SUBTHRESHOLD CURRENT PARAMETERS
+// 
++ voff = -0.26404672+0.0 
++ nfactor = 1.9+0.0 
++ up = 0.0
++ ud = 0.0
++ lp = 1.0
++ tvfbsdoff = 0.0
++ tvoff = 0+0.0
++ cit = 1e-005 
++ cdsc = 0.00013 
++ cdscb = 0.00078 
++ cdscd = 0 
++ eta0 = 0.33576108+0.0 
++ etab = -0.017513367 
++ dsub = 0.26 
+// NEW BSIM4 Parameters(Sub-threshold parameters)
++ voffl = 0 
++ minv = 0 
+// ****
+// 
+//  ROUT PARAMETERS
+// 
++ pclm = 0.32626323+0.0 
++ pdiblc1 = 0.0195 
++ pdiblc2 = 0.00043 
++ pdiblcb = -0.0030839198 
++ drout = 1 
++ pscbe1 = 7.8591361e+008 
++ pscbe2 = 9.0056008e-009 
++ pvag = 0 
++ delta = 0.01 
++ alpha0 = 1e-010 
++ alpha1 = 1e-010 
++ beta0 = 7.3771172 
+// NEW BSIM4 Parameters(ROUT Parameters)
++ fprout = 0 
++ pdits = 0+0.0 
++ pditsl = 0 
++ pditsd = 0+0.0 
+// ***
+// NEW BSIM4 Parameters(GATE INDUCED DRAIN LEAKAGE MODEL PARAMTERS)
++ agidl = 1e-010+0.0 
++ bgidl = 1.0458447e009+0.0 
++ cgidl = 300+0.0 
++ egidl = 0.1 
+// ***
+// NEW BSIM4 Parameters(Gate Leakage Current Parameters)
++ aigbacc = 0.43 
++ bigbacc = 0.054 
++ cigbacc = 0.075 
++ nigbacc = 1 
++ aigbinv = 0.35 
++ bigbinv = 0.03 
++ cigbinv = 0.006 
++ eigbinv = 1.1 
++ nigbinv = 3 
++ aigc = 0.43 
++ bigc = 0.054 
++ cigc = 0.075 
++ nigc = 1 
++ aigsd = 0.43 
++ bigsd = 0.054 
++ cigsd = 0.075 
++ dlcig = 0 
++ poxedge = 1 
++ pigcd = 1 
++ ntox = 1 
++ toxref = 4.23e-009 
+// ****
+// 
+//  TEMPERATURE EFFECTS PARAMETERS
+// 
++ kt1 = -0.69+0.0 
++ kt2 = -0.12196 
++ at = 38000 
++ ute = -0.3 
++ ua1 = 1.3462e-010 
++ ub1 = 3.927e-019 
++ uc1 = 3.7985e-011 
++ kt1l = 0 
++ prt = 0 
+// NEW BSIM4 Parameters(HIGH SPEED RF MODEL PARAMETERS)
++ xrcrg1 = 12 
++ xrcrg2 = 1 
++ rbpb = 50 
++ rbpd = 50 
++ rbps = 50 
++ rbdb = 50 
++ rbsb = 50 
++ gbmin = 1e-012 
+// ***
+// NEW BSIM4 Parameters(FLICKER and THERMAL NOISE PARAMETERS)
++ noia = 1.5e+42 
++ noib = 0.0 
++ noic = 0.0 
++ em = 4.1000000E+07 
++ af = 1 
++ ef = 1.0 
++ kf = 0 
++ ntnoi = 1 
+// ****
+// NEW BSIM4 Parameters(LAYOUT DEPENDENT PARASITIC MODEL PARAMETERS)
++ dmcg = 0 
++ dmcgt = 0 
++ dmdg = 0 
++ xgw = 0 
++ xgl = 0 
++ ngcon = 1 
+// ***
+// 
+// DIODE DC IV PARAMTERS
+// 
+// NEW BSIM4 Parameters(DIODE DC IV parameters)
++ diomod = 1 
++ njs = 1.3632 
++ jss = 2.1483e-05 
++ jsws = 8.040000000000001e-10 
++ xtis = 5.2 
++ bvs = 12.69 
++ xjbvs = 1 
++ ijthsrev = 0.1 
++ ijthsfwd = 0.1 
+// 
+//  DIODE and FET CAPACITANCE PARAMETERS
+// 
++ tpb = 0.0020386 
++ tpbsw = 0.001246 
++ tpbswg = 0 
++ tcj = 0.0012407 
++ tcjsw = 0.00037357 
++ tcjswg = 2e-012 
++ cgdo = 5.5e-11 
++ cgso = 5.5e-11 
++ cgbo = 0 
++ capmod = 2 
++ xpart = 0 
++ cgsl = 1.0005e-011 
++ cgdl = 1.0005e-011 
++ cf = 1.2e-011 
++ clc = 1e-007 
++ cle = 0.6 
++ dlc = -3e-09+0.0+0.0 
++ dwc = 0+0.0 
++ vfbcv = -0.14469 
++ acde = 0.8 
++ moin = 18.13 
++ noff = 3.9 
++ voffcv = -0.10701 
++ ngate = 1e+023 
++ lwc = 0 
++ llc = 0 
++ lwlc = 0 
++ wlc = 0 
++ wwc = 0 
++ wwlc = 0 
+// NEW BSIM4 Parameters(FET and DIODE capacitance parameters)
++ ckappas = 0.6 
++ cjs = 0.00074079 
++ mjs = 0.34629 
++ pbs = 0.6587 
++ cjsws = 9.88e-011 

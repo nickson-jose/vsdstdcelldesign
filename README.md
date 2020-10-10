@@ -145,7 +145,6 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
      set ::env(SYNTH_CAP_LOAD) 2.3
      set ::env(SYNTH_MAX_FANOUT) 3
      set ::env(FILL_INSERTION) 1
-     set ::env(DIODE_INSERTION_STRATEGY) 0
      set ::env(ROUTING_STRATEGY) 14 
      ```
    

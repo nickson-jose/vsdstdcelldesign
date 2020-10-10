@@ -94,7 +94,7 @@ Once the layout is ready, the next step is extracting LEF file for the cell. How
 The easiest way to define a port is through Magic Layout window and following are the steps:
 - In Magic Layout window, first source the .mag file for the design (here inverter). Then **Edit >> Text** which opens up a dialogue box.
 
-![alt text](https://github.com/njose939/OpenLane/blob/master/Images/portA_1.JPG?raw=true)
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/portA.JPG?raw=true)
 
 - For each layer (to be turned into port), make a box on that particular layer and input a label name along with a sticky label of the layer name with which the port needs to be associated. Ensure the Port enable checkbox is checked and default checkbox is unchecked as shown in the figure:
 

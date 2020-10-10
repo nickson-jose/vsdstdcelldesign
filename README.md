@@ -131,7 +131,7 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
   - Verify whether the required cell is excluded from no_synth.cells `(~/openlane_working_dir/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/)`.
   
     **Note:**
-      Notice that in below figure, sky130_vsdinv isn't present in the no_synth.cells.
+      Notice that in below figure, sky130_vsdinv (sky130_inv has been renamed as sky130_vsdinv) isn't present in the no_synth.cells.
    
       ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/no_synth_1.JPG?raw=true) 
      

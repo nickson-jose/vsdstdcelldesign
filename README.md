@@ -112,7 +112,7 @@ In the above two figures, port A (input port) and port Y (output port) are taken
 
 Post port definition, the next step is setting **port class** and **port use** attributes. The "class" and "use" properties of the port have no internal meaning to magic but are used by the LEF and DEF format read and write routines, and match the LEF/DEF CLASS and USE properties for macro cell pins. Valid classes are: default, input, output, tristate, bidirectional, inout, feedthrough, and feedthru. Valid uses are: default, analog, signal, digital, power, ground, and clock. These attributes are set in tkcon window (after selecting each port on layout window. A keyboard shortcut would be repeatedly pressing `s` till that port gets highlighed) as:
 
-![alt text](https://github.com/njose939/OpenLane/blob/master/Images/port_class_use.JPG?raw=true) 
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/port_class_use_1.JPG?raw=true) 
 
 #### Additional:
 You can delete or remove any port by first selecting the port (key `s`) and then executing below two commands in order (in tkcon window):

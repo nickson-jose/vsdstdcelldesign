@@ -136,7 +136,7 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
       ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/no_synth_1.JPG?raw=true) 
      
    
-   - Include the LEF file definition of sky130_vsdinv (the one extracted in [Step-5](#defining-lef-properties-and-extracting-lef-file)) as per the **Additonal** section below in `merged.lef` file (`~/openlane_working_dir/openlane/designs/picorv32a/runs/<tag_name>/tmp/merged.lef)
+   - Include the LEF file definition of sky130_vsdinv (the one extracted in [Step-5](#defining-lef-properties-and-extracting-lef-file)) as per the **Additonal** section below in `merged.lef` file (`~/openlane_working_dir/openlane/designs/picorv32a/runs/<tag_name>/tmp/merged.lef`)
 
 - Include following configuration settings (specific to picorv32a design) in the `config.tcl` file present in `~/openlane_working_dir/openlane/designs/picorv32a/`:-
      ```bash

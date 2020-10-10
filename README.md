@@ -131,17 +131,17 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
   - Verify whether the required cell is excluded from no_synth.cells `(~/openlane_working_dir/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/)`.
   
     **Note:**
-      Notice that in below figure, sky130_fd_sc_hd__inv_1 isn't present in the no_synth.cells.
+      Notice that in below figure, sky130_vsdinv isn't present in the no_synth.cells.
    
-      ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/no_synth.JPG?raw=true) 
+      ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/no_synth_1.JPG?raw=true) 
      
    
-   - Modify the LEF file definition for sky130_fd_sc_hd__inv_1 entry with the one extracted in [Step-5](#defining-lef-properties-and-extracting-lef-file) in `sky130_fd_sc_hd.lef` file (`~/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef`)
+   - Include the LEF file definition of sky130_vsdinv (the one extracted in [Step-5]) as per the **Additonal** section below(#defining-lef-properties-and-extracting-lef-file) in `merged.lef` file (`~/openlane_working_dir/openlane/designs/picorv32a/runs/<tag_name>/tmp/merged.lef)
 
 - Include following configuration settings (specific to picorv32a design) in the `config.tcl` file present in `~/openlane_working_dir/openlane/designs/picorv32a/`:-
      ```bash
      set ::env(CLOCK_PORT) "clk"
-     set ::env(SYNTH_DRIVING_CELL) sky130_fd_sc_hd__inv_1
+     set ::env(SYNTH_DRIVING_CELL) sky130_vsdinv
      set ::env(SYNTH_CAP_LOAD) 2.3
      set ::env(SYNTH_MAX_FANOUT) 3
      set ::env(FILL_INSERTION) 1
@@ -149,7 +149,7 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
      ```
    
    **Note:**
-     The above settings ensure that the flow takes only sky130_fd_sc_hd__inv_1 as the cell to drive the input ports and inserts filler cells in empty spaces.
+     The above settings ensure that the flow takes only sky130_vsdinv as the cell to drive the input ports and inserts filler cells in empty spaces.
 
 - Run the interactive flow as described [here.](https://github.com/efabless/openlane#interactive-mode)
   
@@ -174,7 +174,7 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
 
 The custom inverter successfully included in the picorv32a design. Below is the final routed picorv32a design with the custom cell zoomed in and highlighted.
 
-![alt text](https://github.com/njose939/OpenLane/blob/master/Images/final_routing.JPG?raw=true) 
+![alt text](https://github.com/njose939/OpenLane/blob/master/Images/final_routing_1.JPG?raw=true) 
 
 ## Challenges
 

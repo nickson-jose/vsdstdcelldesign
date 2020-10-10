@@ -141,15 +141,12 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
 - Include following configuration settings (specific to picorv32a design) in the `config.tcl` file present in `~/openlane_working_dir/openlane/designs/picorv32a/`:-
      ```bash
      set ::env(CLOCK_PORT) "clk"
-     set ::env(SYNTH_DRIVING_CELL) sky130_vsdinv
-     set ::env(SYNTH_CAP_LOAD) 2.3
-     set ::env(SYNTH_MAX_FANOUT) 3
      set ::env(FILL_INSERTION) 1
      set ::env(ROUTING_STRATEGY) 14 
      ```
    
    **Note:**
-     The above settings ensure that the flow takes only sky130_vsdinv as the cell to drive the input ports and inserts filler cells in empty spaces.
+     The above settings ensure that the flow inserts filler cells in empty spaces and uses TritonRoute14 for detailed routing.
 
 - Run the interactive flow as described [here.](https://github.com/efabless/openlane#interactive-mode)
   

@@ -1,0 +1,12 @@
+****************************
+STEPS TO ADD EXTRA LEFS
+****************************
+
+1) In the designs/<design_name>/config.tcl set below variable after copying the custom lef to /src folder:
+
+  set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
+
+2) Include below lines in openlane flow (post 'prep -design' stage):
+  
+  set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+  add_lefs -src $lefs

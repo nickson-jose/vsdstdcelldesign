@@ -1,6 +1,5 @@
 set ::env(CLOCK_PORT) clk
 set ::env(CLOCK_PERIOD) 12.000
-#set ::env(SYNTH_DRIVING_CELL) sky130_vsdinv
 set ::env(SYNTH_DRIVING_CELL) sky130_fd_sc_hd__inv_8
 set ::env(SYNTH_DRIVING_CELL_PIN) Y
 set ::env(SYNTH_CAP_LOAD) 17.65

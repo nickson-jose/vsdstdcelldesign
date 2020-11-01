@@ -78,7 +78,7 @@ PicoRV32 is free and open hardware licensed under the ISC license. All features 
 
 ## Standard cell layout design in Magic
 
-- The proposed inverter for the design is a single height standard cell, so the dimensions needs to be a multiple of the single height place site; which for skywater 130 node has a nomenclature of `unithd` with dimensions(in microns): 0.46 x 2.72 (width x height). 
+- The proposed inverter for the design is a single height standard cell, so the dimensions needs to be a multiple of the single height place site; which for skywater 130 node has a nomenclature of `unithd` with dimensions(in microns): 0.46 x 2.72 (width x height). The magic tool is invoked with sky130 tech file as `magic -T sky130A.tech &` (the tech file has been included in this repo under `/libs`).
 
 - The first step in magic layout tool is to create a bounding box with a width of 1.38 (3 x width(unithd)) and height of 2.72. This can be done by using command `property FIXED_BBOX {0 0 138 272}` in magic tkcon window.
 
@@ -87,6 +87,9 @@ PicoRV32 is free and open hardware licensed under the ISC license. All features 
 - This is followed by defining the ground and power segments (in metal 1), the respective contacts and finally the layout of the logic part. Same procedure can be followed for any standard cell layout.
 
 ![alt text](https://github.com/njose939/OpenLane/blob/master/Images/initial_metal2.jpg?raw=true)
+
+### Note:
+The layout (also included as the part of this repo, viz., `sky130_inv.mag`) can be viewed in magic layout window as `magic -T sky130A.tech sky130_inv.mag &` 
 
 ## Create port definition
 

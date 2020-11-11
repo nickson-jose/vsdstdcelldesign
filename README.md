@@ -134,13 +134,13 @@ If a new custom cell needs to be plugged into openlane flow, include the lefs (t
 
 - In the design's config.tcl file add the below line to point to the lef location which is required during spice extraction.
       
-        `set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]`
+          set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
       
 - Include the below command to include the additional lef into the flow:
       
-       ```set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+          set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
         
-          add_lefs -src $lefs```
+          add_lefs -src $lefs
        
 - Run the interactive flow as described [here.](https://github.com/efabless/openlane#interactive-mode)
   

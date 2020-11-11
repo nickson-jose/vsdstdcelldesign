@@ -131,17 +131,18 @@ Certain properties needs to be set before writing the LEF. As mentioned before, 
 ## Plugging custom LEF to openlane flow
 
 If a new custom cell needs to be plugged into openlane flow, include the lefs (the one extracted in [Step-5](#defining-lef-properties-and-extracting-lef-file)) as below:
-     - In the design's config.tcl file add the below line to point to the lef location which is required during spice extraction.
+
+- In the design's config.tcl file add the below line to point to the lef location which is required during spice extraction.
       
         `set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]`
       
-     - Include the below command to include the additional lef into the flow:
+- Include the below command to include the additional lef into the flow:
       
        `set lefs [glob $::env(DESIGN_DIR)/src/*.lef]`
         
        `add_lefs -src $lefs`
        
-     - Run the interactive flow as described [here.](https://github.com/efabless/openlane#interactive-mode)
+- Run the interactive flow as described [here.](https://github.com/efabless/openlane#interactive-mode)
   
    **Note:**
      A sample inverter magic file (_sky130_inv.mag_) has been included as a reference resource.

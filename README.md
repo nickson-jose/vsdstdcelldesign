@@ -142,7 +142,7 @@ If a new custom cell needs to be plugged into openlane flow, include the lefs (t
         
           add_lefs -src $lefs
        
-- Run the interactive flow as described [here.](https://github.com/efabless/openlane#interactive-mode)
+- Run the interactive flow as described [here.](https://github.com/efabless/openlane/blob/master/doc/advanced_readme.md)
   
    **Note:**
      A sample inverter magic file (_sky130_inv.mag_) has been included as a reference resource.
